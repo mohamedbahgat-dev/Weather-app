@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin: 20px;
   padding: 10px;
   padding-inline: 30px;
@@ -32,6 +33,7 @@ body {
 }
 
 .search-form input {
+  background-color: transparent;
   border: none;
   margin-left: 10px;
 }
@@ -39,7 +41,7 @@ body {
 .search-btn {
   display: inline-block;
   border: none;
-  background-color: white;
+  background-color: transparent;
   margin-right: 10px;
 }
 
@@ -74,4 +76,22 @@ body {
 
 .logo-img {
   width: 100px;
+}
+
+.theme-icon {
+  background-color: #0e2148;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 5px;
+  padding-inline: 15px;
+  border-radius: 5px;
+}
+
+.theme-icon button {
+  background-color: #0e2148;
+  cursor: pointer;
+  border: none;
+  color: white;
 }

@@ -1,0 +1,27 @@
+.dashboard {
+  background-color: rgb(162, 222, 67);
+  width: 40%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  margin-left: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.header h3 {
+  text-align: center;
+}
+
+.temp-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+article {
+  margin-top: 20px;
+}

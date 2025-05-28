@@ -1,13 +1,13 @@
 .dashboard {
-  background-color: rgb(234, 237, 228);
+  background-color: #eaede4;
   width: 40%;
-  height: 200px;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: start;
   margin-left: 20px;
-  padding: 30px;
+  padding-inline: 30px;
   border-radius: 10px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 article {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .temp-card img {

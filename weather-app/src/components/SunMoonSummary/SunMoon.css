@@ -1,0 +1,26 @@
+.sun-moon {
+  width: 44%;
+  height: 16vh;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  background-color: #eaede4;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+.sun-moon div {
+  text-align: center;
+  background-color: white;
+  width: 40%;
+  border-radius: 20px;
+}
+
+.sunset,
+.sunrise {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}

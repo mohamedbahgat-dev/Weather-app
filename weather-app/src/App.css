@@ -1,0 +1,21 @@
+.navbar {
+  grid-area: navbar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.forecast {
+  grid-area: forecast;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "navbar navbar"
+    "main forecast";
+  column-gap: 20px;
+}

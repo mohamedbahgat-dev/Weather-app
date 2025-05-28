@@ -18,8 +18,7 @@ const MainDashboard: React.FC = () => {
     <section className="dashboard">
       <div className="header">
         <p>Current Weather</p>
-        <p>{datetime.toLocaleTimeString()}</p>
-        <p>{datetime.toLocaleDateString()}</p>
+        <p>{datetime.toLocaleString()}</p>
       </div>
       <div className="temp-card">
         <img src={sun} alt="weather icon" />

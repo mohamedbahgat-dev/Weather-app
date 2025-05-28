@@ -1,0 +1,23 @@
+.forecast-item {
+  height: 86px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+}
+
+.condition,
+.weather {
+  width: 50%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather {
+  height: 30px;
+  border-left: 2px solid rgb(160, 164, 164);
+}

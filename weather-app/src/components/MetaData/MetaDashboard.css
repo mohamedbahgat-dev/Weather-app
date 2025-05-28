@@ -1,12 +1,12 @@
 .meta-dashboard {
   background-color: #eaede4;
-  width: 44%;
   height: 30vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin-left: 20px;
+  margin-block: 20px;
   border-radius: 10px;
 }
 

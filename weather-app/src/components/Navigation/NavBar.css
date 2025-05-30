@@ -6,6 +6,7 @@ body {
 
 .nav {
   background-color: #fbf4db;
+
   border-radius: 20px;
   display: flex;
   justify-content: space-between;

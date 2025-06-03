@@ -1,4 +1,4 @@
-const APIKEY = "92037c02546f4a869ff51443252905";
+const APIKEY = "2f7929ea5ebb4412994204114250106";
 
 export const FetchCurrentWeather = (query: any) => {
   return fetch(

@@ -1,11 +1,13 @@
 import "./MetaDashboard.css";
+import { useCurrentWeather } from "../../Store";
 
 const MetaDashboard = () => {
+  const { currentWeather } = useCurrentWeather();
   return (
     <section className="meta-dashboard">
       <div className="air-quality">
         <p>Air Quality</p>
-        <span>150</span>
+        <span>Co poilution: </span>
       </div>
       <div className="wind">
         <p>wind</p>

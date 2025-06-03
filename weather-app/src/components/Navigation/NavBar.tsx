@@ -6,8 +6,11 @@ import { FaUser } from "react-icons/fa";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { useState } from "react";
+import { useCurrentWeather } from "../../Store";
 
 const NavBar = () => {
+  const { setSearchQuery } = useCurrentWeather();
+
   const [bgColor, setBgColor] = useState<string>("white");
   const [bgName, setBgName] = useState<string>("Light");
 
@@ -17,6 +20,11 @@ const NavBar = () => {
     setBgColor(newColor);
     setBgName(newName);
     document.body.style.backgroundColor = newColor;
+  };
+
+  const search = (formData: any) => {
+    const words = formData.get("query").trim();
+    setSearchQuery(words);
   };
 
   return (
@@ -40,12 +48,14 @@ const NavBar = () => {
           <IoLocationOutline size="1.5rem" />
           <h3>Cairo, Egypt</h3>
         </div>
-        <form className="search-form">
-          <input type="text" placeholder="search for a location" />
+        <form action={search}>
+          <input type="text" placeholder="search for a location" name="query" />
           <button className="search-btn" type="submit">
             <IoSearchOutline size="15px" />
+            Search
           </button>
         </form>
+
         <div className="notification-icon">
           <IoMdNotifications color="#332D56" size="1.5rem" />
         </div>

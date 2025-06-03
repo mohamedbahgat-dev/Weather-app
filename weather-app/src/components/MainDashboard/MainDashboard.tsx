@@ -1,33 +1,40 @@
 import { useEffect, useState } from "react";
 import { WiCelsius } from "react-icons/wi";
 import "./MainDashboard.css";
-import sun from "./../../../public/sun.png";
 import { FetchCurrentWeather } from "../../Services/FetchData.tsx";
+import { useCurrentWeather } from "../../Store.tsx";
 
 const MainDashboard: React.FC = () => {
+  const { currentWeather, searchQuery, setCurrentWeather } =
+    useCurrentWeather();
   const [datetime, setDatetime] = useState<Date>(new Date());
-  const [searchTerm, setSearchTerm] = useState<string>("london");
-  const [weatherData, setWeatherData] = useState<any>();
-  const [error, setError] = useState<string | null>("");
-  const [loading, setLoading] = useState<boolean>(true);
+
+  const [error, setError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const term = searchQuery ? searchQuery : "paris";
 
   useEffect(() => {
     const getCurrentWeather = async () => {
       try {
-        const response = await FetchCurrentWeather(searchTerm);
+        const response = await FetchCurrentWeather(term);
         if (!response.ok) {
           setError("Error Fetching Data");
+        } else {
+          setError("");
+          const data = await response.json();
+          setCurrentWeather(data.current);
         }
-        const data: any = await response.json();
-        setWeatherData(data);
       } catch (error) {
         setError(error instanceof Error ? error.message : "An error occured");
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
     getCurrentWeather();
-  }, [searchTerm]);
+
+    console.log(currentWeather);
+  }, [searchQuery]);
 
   useEffect(() => {
     const timeInterval = setInterval(() => {
@@ -39,19 +46,43 @@ const MainDashboard: React.FC = () => {
   return (
     <section className="dashboard">
       <div className="header">
-        {loading ? <p>...Loading</p> : <p>{weatherData.location.name}</p>}
-        <p>{datetime.toLocaleString()}</p>
-      </div>
-      <div className="temp-card">
-        <img src={sun} alt="weather icon" />
-        <div className="temp">
-          <h3>30</h3>
+        {error ? (
+          <div>{error}</div>
+        ) : (
+          <div>
+            {isLoading ? (
+              <div>...Loading</div>
+            ) : (
+              <div>
+                <p>{searchQuery ? searchQuery : "Paris"}</p>
+                <p>{datetime.toLocaleString()}</p>
+                <div className="temp-card">
+                  <img src={currentWeather.condition.icon} alt="weather icon" />
+                  <div className="temp">
+                    <h3>{currentWeather.temp_c}</h3>
 
-          <WiCelsius size={30} />
-        </div>
-        <p>Weather note</p>
+                    <WiCelsius size={30} />
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <p>{currentWeather.condition.text}</p>
+                    <p style={{ width: "120px" }}>
+                      feels like {currentWeather.feelslike_c} °C
+                    </p>
+                  </div>
+                </div>
+                <article>Alerts</article>
+              </div>
+            )}
+          </div>
+        )}
       </div>
-      <article>Note about weather condition</article>
     </section>
   );
 };

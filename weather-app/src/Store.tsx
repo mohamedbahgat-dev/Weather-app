@@ -53,6 +53,7 @@ interface CurrentData {
 interface CurrentStoreState {
   currentWeather: CurrentData[] | any;
   searchQuery: any;
+
   setCurrentWeather: (currentWeather: CurrentData[]) => void;
   setSearchQuery: (query: any) => void;
 }
@@ -62,4 +63,24 @@ export const useCurrentWeather = create<CurrentStoreState>((set) => ({
   searchQuery: "",
   setCurrentWeather: (currentWeather) => set({ currentWeather }),
   setSearchQuery: (query) => set({ searchQuery: query }),
+}));
+
+interface astroData {
+  sunrise: string;
+  sunset: string;
+  moonrise: string;
+  moonset: string;
+  moon_phase: string;
+  moon_illumination: number;
+  is_moon_up: number;
+  is_sun_up: number;
+}
+interface astroDataStore {
+  astroData: astroData[] | any;
+  setAstroData: (astroData: astroData[]) => void;
+}
+
+export const useAstrodata = create<astroDataStore>((set) => ({
+  astroData: [],
+  setAstroData: (astroData) => set({ astroData }),
 }));

@@ -1,34 +1,47 @@
 import "./MetaDashboard.css";
 import { useCurrentWeather } from "../../Store";
+import { useEffect, useState } from "react";
 
 const MetaDashboard = () => {
   const { currentWeather } = useCurrentWeather();
+  const [metaData, setMetaData] = useState(currentWeather);
+
+  useEffect(() => {
+    setMetaData(currentWeather);
+  }, [currentWeather]);
+
   return (
-    <section className="meta-dashboard">
-      <div className="air-quality">
-        <p>Air Quality</p>
-        <span>Co poilution: </span>
-      </div>
-      <div className="wind">
-        <p>wind</p>
-        <span>2 mph</span>
-      </div>
-      <div className="humidity">
-        <p>Humidity</p>
-        <span>40%</span>
-      </div>
-      <div className="visibility">
-        <p>Visibility</p>
-        <span>4 mi</span>
-      </div>
-      <div className="pressure">
-        <p>Pressure</p>
-        <span>27.79 in</span>
-      </div>
-      <div className="sea-level">
-        <p>Sea level</p>
-        <span>1022 hPa</span>
-      </div>
+    <section>
+      {metaData.length !== 0 ? (
+        <div className="meta-dashboard">
+          <div>
+            <p>Air Quality</p>
+            <span>Co level : {metaData.air_quality.co} </span>
+          </div>
+          <div>
+            <p>Wind Speed</p>
+            <span>{metaData.wind_mph} mph </span>
+          </div>
+          <div>
+            <p>humidity</p>
+            <span>{metaData.humidity}% </span>
+          </div>
+          <div>
+            <p>Visibility</p>
+            <span>{metaData.vis_miles} mi </span>
+          </div>
+          <div>
+            <p>Pressure</p>
+            <span>{metaData.pressure_in} mi </span>
+          </div>
+          <div>
+            <p>Wind Direction</p>
+            <span>{metaData.wind_dir} </span>
+          </div>
+        </div>
+      ) : (
+        <div>..Loading</div>
+      )}
     </section>
   );
 };

@@ -5,22 +5,20 @@ import SunMoon from "./components/SunMoonSummary/SunMoon";
 import ForecastDashboard from "./components/Forecasting/ForcastDashboard";
 import "./App.css";
 
-const App = () => {
-  return (
-    <div className="container">
-      <section className="navbar">
-        <NavBar />
-      </section>
-      <section className="main">
-        <MainDashboard />
-        <MetaDashboard />
-        <SunMoon />
-      </section>
-      <section className="forecast">
-        <ForecastDashboard />
-      </section>
-    </div>
-  );
-};
+const App = () => (
+  <div className="container">
+    <section className="navbar">
+      <NavBar />
+    </section>
+    <section className="main">
+      <MainDashboard />
+      <MetaDashboard />
+      <SunMoon />
+    </section>
+    <section className="forecast">
+      <ForecastDashboard />
+    </section>
+  </div>
+);
 
 export default App;

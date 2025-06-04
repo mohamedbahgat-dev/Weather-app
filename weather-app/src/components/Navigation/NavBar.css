@@ -6,7 +6,6 @@ body {
 
 .nav {
   background-color: #fbf4db;
-
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -36,10 +35,17 @@ body {
 .search-form input {
   background-color: transparent;
   border: none;
-  margin-left: 10px;
+  padding-left: 20px;
+  width: 550px;
+}
+
+.search-form input:focus {
+  outline: none;
+  outline: blue;
 }
 
 .search-btn {
+  cursor: pointer;
   display: inline-block;
   border: none;
   background-color: transparent;

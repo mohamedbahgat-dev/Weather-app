@@ -48,11 +48,10 @@ const NavBar = () => {
           <IoLocationOutline size="1.5rem" />
           <h3>Cairo, Egypt</h3>
         </div>
-        <form action={search}>
+        <form className="search-form" action={search}>
           <input type="text" placeholder="search for a location" name="query" />
           <button className="search-btn" type="submit">
             <IoSearchOutline size="15px" />
-            Search
           </button>
         </form>
 

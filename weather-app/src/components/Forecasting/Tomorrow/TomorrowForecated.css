@@ -1,0 +1,9 @@
+.forecast-cards {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 12px;
+  gap: 9px;
+}

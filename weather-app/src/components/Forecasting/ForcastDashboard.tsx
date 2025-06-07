@@ -1,10 +1,11 @@
 import "./ForecastDashboard.css";
-import ForecastCard from "./ForecastCard";
+
 import { useForcastData, useCurrentWeather } from "../../Store";
 import { FetchForecasted } from "../../Services/FetchData";
 import { useState, useEffect, useRef } from "react";
 import TodayForcasted from "./Today/TodayForcasted";
 import TomorrowForecasted from "./Tomorrow/TomorrowForecasted";
+import FiveDaysForecasted from "./FiveDays/FiveDaysForecasted";
 
 const ForecastDashboard = () => {
   const { searchQuery } = useCurrentWeather();
@@ -13,22 +14,37 @@ const ForecastDashboard = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [activeToday, setActiveToday] = useState<boolean>(true);
   const [activeTomorrow, setActiveTomorrow] = useState<boolean>(false);
+  const [activeFiveDays, setActiveFiveDays] = useState<boolean>(false);
 
   const todayRef = useRef<any>(null);
   const tomorrowRef = useRef<any>(null);
+  const FiveDaysRef = useRef<any>(null);
 
   const handleTodayWeather = () => {
     todayRef.current.className = "show";
     tomorrowRef.current.className = "hidden";
+    FiveDaysRef.current.className = "hidden";
     setActiveToday(true);
     setActiveTomorrow(false);
+    setActiveFiveDays(false);
   };
 
   const handleTomorrowWeather = () => {
     todayRef.current.className = "hidden";
     tomorrowRef.current.className = "show";
+    FiveDaysRef.current.className = "hidden";
     setActiveToday(false);
     setActiveTomorrow(true);
+    setActiveFiveDays(false);
+  };
+
+  const handleFiveDaysWeather = () => {
+    todayRef.current.className = "hidden";
+    tomorrowRef.current.className = "hidden";
+    FiveDaysRef.current.className = "show";
+    setActiveToday(false);
+    setActiveTomorrow(false);
+    setActiveFiveDays(true);
   };
 
   const term = searchQuery ? searchQuery : "paris";
@@ -51,7 +67,12 @@ const ForecastDashboard = () => {
       }
     };
     getCurrentWeather();
+    console.log(forcastedData);
   }, [searchQuery]);
+
+  useEffect(() => {
+    console.log(forcastedData);
+  }, [forcastedData]);
 
   return (
     <section className="forecast-board">
@@ -76,7 +97,16 @@ const ForecastDashboard = () => {
         >
           Tomorrow
         </button>
-        <button>5 Days</button>
+        <button
+          onClick={handleFiveDaysWeather}
+          style={
+            activeFiveDays
+              ? { backgroundColor: "#f2811e", color: "white" }
+              : { backgroundColor: "wheat" }
+          }
+        >
+          5 days
+        </button>
       </div>
       <div>
         {error ? (
@@ -89,12 +119,16 @@ const ForecastDashboard = () => {
               <div>
                 {forcastedData ? (
                   <div className="forecast-board">
-                    <div className="show forecast-cards" ref={todayRef}>
+                    <div className="show" ref={todayRef}>
                       <TodayForcasted />
                     </div>
 
-                    <div className="hidden forecast-cards" ref={tomorrowRef}>
+                    <div className="hidden " ref={tomorrowRef}>
                       <TomorrowForecasted />
+                    </div>
+
+                    <div className="hidden " ref={FiveDaysRef}>
+                      <FiveDaysForecasted />
                     </div>
                   </div>
                 ) : (

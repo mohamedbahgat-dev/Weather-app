@@ -4,18 +4,6 @@
   margin-left: 20px;
 }
 
-.forecast-cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  /* margin-inline: 10px; */
-  margin-top: 19px;
-  margin-right: 18px;
-  padding: 10px;
-  gap: 13px;
-}
-
 .forecast-btns {
   display: flex;
   flex-wrap: wrap;

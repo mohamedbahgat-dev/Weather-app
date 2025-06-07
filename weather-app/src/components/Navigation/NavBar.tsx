@@ -24,6 +24,7 @@ const NavBar = () => {
 
   const search = (formData: any) => {
     const words = formData.get("query").trim();
+    if (words === "") return;
     setSearchQuery(words);
   };
 

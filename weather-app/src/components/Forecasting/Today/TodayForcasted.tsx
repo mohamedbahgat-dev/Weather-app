@@ -3,7 +3,7 @@ import ForecastCard from "../ForecastCard";
 
 const TodayForcasted = () => {
   return (
-    <div className="">
+    <div className="forecast-cards">
       <ForecastCard />
       <ForecastCard />
       <ForecastCard />

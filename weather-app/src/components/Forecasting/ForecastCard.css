@@ -5,6 +5,8 @@
   align-items: center;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 12px;
 }
 
 .condition,

@@ -9,9 +9,10 @@
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  margin-inline: 10px;
+  /* margin-inline: 10px; */
   margin-top: 19px;
-  padding: 20px;
+  margin-right: 18px;
+  padding: 10px;
   gap: 13px;
 }
 
@@ -30,4 +31,12 @@
   background-color: wheat;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
 }

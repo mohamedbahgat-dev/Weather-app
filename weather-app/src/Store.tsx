@@ -84,3 +84,8 @@ export const useAstrodata = create<astroDataStore>((set) => ({
   astroData: [],
   setAstroData: (astroData) => set({ astroData }),
 }));
+
+export const useForcastData = create<any>((set) => ({
+  forcastedData: [],
+  setForcastedData: (forcastedData: any) => set({ forcastedData }),
+}));

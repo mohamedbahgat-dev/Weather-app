@@ -24,3 +24,9 @@ export const FetchAstroData = (query: QueryType) => {
     `http://api.weatherapi.com/v1/astronomy.json?key=${APIKEY}&q=${query}&dt=${getDate()}`
   );
 };
+
+export const FetchForecasted = (query: QueryType) => {
+  return fetch(
+    `http://api.weatherapi.com/v1/forecast.json?key=${APIKEY}&q=${query}&days=14&aqi=no&alerts=no`
+  );
+};

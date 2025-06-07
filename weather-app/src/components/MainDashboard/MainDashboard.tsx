@@ -32,8 +32,6 @@ const MainDashboard: React.FC = () => {
       }
     };
     getCurrentWeather();
-
-    console.log(error);
   }, [searchQuery]);
 
   useEffect(() => {

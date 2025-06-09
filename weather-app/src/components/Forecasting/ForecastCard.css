@@ -8,8 +8,8 @@
   margin-top: 10px;
 }
 
-.condition,
-.weather {
+.weather,
+.condition {
   width: 50%;
   display: flex;
   gap: 20px;
@@ -20,4 +20,13 @@
 .weather {
   height: 30px;
   border-left: 2px solid rgb(160, 164, 164);
+}
+
+.condition-text {
+  font-size: 10px;
+  width: 70px;
+}
+
+.condition img {
+  width: 2.2rem;
 }

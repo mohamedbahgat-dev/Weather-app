@@ -1,10 +1,17 @@
 import "./FiveDaysForcasted.css";
 import ForecastCard from "../ForecastCard";
+import { useForcastData } from "../../../Store";
 
 const FiveDaysForecasted = () => {
+  const { forcastedData } = useForcastData();
+
   return (
     <div className="forecast-cards">
-      <ForecastCard />
+      {forcastedData.slice(0, 5).map((data: any) => (
+        <div key={data.date_epoch}>
+          <ForecastCard data={data} />
+        </div>
+      ))}
     </div>
   );
 };

@@ -67,12 +67,7 @@ const ForecastDashboard = () => {
       }
     };
     getCurrentWeather();
-    console.log(forcastedData);
   }, [searchQuery]);
-
-  useEffect(() => {
-    console.log(forcastedData);
-  }, [forcastedData]);
 
   return (
     <section className="forecast-board">

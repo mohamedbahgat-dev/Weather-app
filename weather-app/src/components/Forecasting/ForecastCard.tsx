@@ -1,21 +1,20 @@
 import "./ForecastCard.css";
-import { WiCloud } from "react-icons/wi";
 
-const ForecastCard = () => {
+const ForecastCard = (props: any) => {
   return (
     <section className="forecast-item">
       <div className="condition">
-        <WiCloud size={30} />
+        <img src={props.data.day.condition.icon} alt="condition icon" />
         <div>
-          <p>1 AM</p>
-          <p>cloudy, clear</p>
+          <p>{props.data.date}</p>
+          <p>{props.data.day.condition.text}</p>
         </div>
       </div>
       <div className="weather">
-        <h3>18 °C</h3>
+        <h3>{props.data.day.avgtemp_c}°C</h3>
         <div>
-          <p>wind: 120Km</p>
-          <p>Humidity: 40%</p>
+          <p>wind: {props.data.day.maxwind_kph} kph</p>
+          <p>Humidity: {props.data.day.avghumidity}%</p>
         </div>
       </div>
     </section>

@@ -2,19 +2,20 @@ table {
   margin-block: 20px;
   table-layout: fixed;
   width: 95%;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-thead {
-  background-color: rgba(255, 245, 208, 0.661);
+  /* border-collapse: separate; */
+  border-spacing: 0;
 }
 
 tr {
-  border: 1px solid rgb(177, 168, 168);
   text-align: center;
 }
 
 td {
   padding: 8px;
+  border: 0.5px solid rgba(167, 167, 167, 0.738);
+}
+
+th {
+  border: 0.5px solid rgb(173, 170, 170);
+  padding: 10px;
 }

@@ -7,8 +7,17 @@
 .forecast-btns {
   display: flex;
   flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
   margin-left: 30px;
+  margin-right: 50px;
   padding-top: 20px;
+}
+
+.forecast-btns button:last-child {
+  background-color: #070707;
+  margin-left: auto;
+  color: white;
 }
 
 .forecast-btns button {

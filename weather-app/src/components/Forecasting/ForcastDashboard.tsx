@@ -102,6 +102,7 @@ const ForecastDashboard = () => {
         >
           5 days
         </button>
+        <button className="days-forecast">14 days forecast</button>
       </div>
       <div>
         {error ? (

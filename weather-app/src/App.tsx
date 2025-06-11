@@ -1,24 +1,22 @@
-import NavBar from "./components/Navigation/NavBar";
-import MainDashboard from "./components/MainDashboard/MainDashboard";
-import MetaDashboard from "./components/MetaData/MetaDashboard";
-import SunMoon from "./components/SunMoonSummary/SunMoon";
-import ForecastDashboard from "./components/Forecasting/ForcastDashboard";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Layout from "./Layout";
+import TwoWeeksForecast from "./components/Forecasting/WeeksForecasting/TwoWeeksForecast";
+
 import "./App.css";
 
 const App = () => (
-  <div className="container">
-    <section className="navbar">
-      <NavBar />
-    </section>
-    <section className="main">
-      <MainDashboard />
-      <MetaDashboard />
-      <SunMoon />
-    </section>
-    <section className="forecast">
-      <ForecastDashboard />
-    </section>
-  </div>
+  <>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="forecast" element={<TwoWeeksForecast />} />
+          <Route path="*" element={<div>Page Not Found</div>} />
+        </Route>
+      </Routes>
+    </Router>
+  </>
 );
 
 export default App;

@@ -1,5 +1,5 @@
 import "./NavBar.css";
-import { IoLocationOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoMdNotifications } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
@@ -39,15 +39,18 @@ const NavBar = () => {
         }
       >
         <div className="logo-container">
-          <img
-            className="logo-img"
-            src="../public/logo.png"
-            alt="SkyNow logo"
-          />
+          <Link to={"/"}>
+            <img
+              className="logo-img"
+              src="../public/logo.png"
+              alt="SkyNow logo"
+            />
+          </Link>
         </div>
-        <div className="location-info">
-          <IoLocationOutline size="1.5rem" />
-          <h3>Cairo, Egypt</h3>
+        <div className="navigation-list">
+          <Link to="/">Home</Link>
+
+          <Link to="/forecast">14 days forecast</Link>
         </div>
         <form className="search-form" action={search}>
           <input type="text" placeholder="search for a location" name="query" />

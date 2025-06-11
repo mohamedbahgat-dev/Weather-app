@@ -102,3 +102,19 @@ body {
   border: none;
   color: white;
 }
+
+.home {
+  margin-right: 20px;
+}
+
+.home,
+.weeks-forecast {
+  background-color: #f2811e;
+  border: none;
+  padding: 5px;
+  color: white;
+  border-radius: 8px;
+  padding-inline: 8px;
+  font-family: "poppins";
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@
   background-color: #eaede4;
   border-radius: 10px;
   margin-left: 20px;
+  height: auto;
 }
 
 .forecast-btns {
@@ -29,4 +30,11 @@
 
 .show {
   display: flex;
+  flex-direction: column;
+}
+
+.secondary-charts {
+  display: flex;
+
+  gap: 18px;
 }

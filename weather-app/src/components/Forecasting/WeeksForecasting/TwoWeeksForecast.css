@@ -2,5 +2,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #68bfef;
+  margin-inline: 100px;
+  margin-top: 50px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
   gap: 40px;
+}
+
+.cast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+}
+
+.maxtemp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-date p {
+  text-align: center;
+  color: rgba(239, 217, 217, 0.781);
+  font-size: 10px;
+  margin-top: -15px;
+}
+
+.day-date img {
+  width: 25px;
+  text-align: center;
+}
+
+.day-date h3 {
+  color: white;
+}
+
+.mintemp-container img {
+  width: 30px;
 }

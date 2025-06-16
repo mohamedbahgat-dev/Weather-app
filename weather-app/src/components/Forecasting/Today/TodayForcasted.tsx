@@ -1,13 +1,8 @@
 import "./TodayForcasted.css";
 import { useForcastData } from "../../../Store";
-import { useEffect } from "react";
 
 const TodayForcasted = () => {
   const { forcastedData } = useForcastData();
-
-  useEffect(() => {
-    console.log(forcastedData);
-  }, [forcastedData]);
 
   return (
     <section>

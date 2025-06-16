@@ -1,0 +1,11 @@
+.humid-line-chart {
+  border: 1px solid rgba(79, 78, 78, 0.326);
+  border-radius: 20px;
+  margin-block: 8px;
+
+  padding: 10px;
+}
+
+.humid-trend {
+  display: flex;
+}

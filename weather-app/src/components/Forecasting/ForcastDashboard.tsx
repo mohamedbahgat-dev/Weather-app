@@ -1,11 +1,13 @@
 import "./ForecastDashboard.css";
+import TempForecast from "./Charts/TempForecast";
 
 import { useForcastData, useCurrentWeather } from "../../Store";
 import { FetchForecasted } from "../../Services/FetchData";
 import { useState, useEffect, useRef } from "react";
-import TodayForcasted from "./Today/TodayForcasted";
+import PercepForcast from "./Charts/PercepForcast";
 import TomorrowForecasted from "./Tomorrow/TomorrowForecasted";
 import FiveDaysForecasted from "./FiveDays/FiveDaysForecasted";
+import HumidForcast from "./Charts/HumidForcast";
 
 const ForecastDashboard = () => {
   const { searchQuery } = useCurrentWeather();
@@ -100,7 +102,7 @@ const ForecastDashboard = () => {
               : { backgroundColor: "wheat" }
           }
         >
-          5 days
+          3 days forecast
         </button>
       </div>
       <div>
@@ -115,7 +117,11 @@ const ForecastDashboard = () => {
                 {forcastedData ? (
                   <div className="forecast-board">
                     <div className="show" ref={todayRef}>
-                      <TodayForcasted />
+                      <TempForecast />
+                      <div className="secondary-charts">
+                        <PercepForcast />
+                        <HumidForcast />
+                      </div>
                     </div>
 
                     <div className="hidden " ref={tomorrowRef}>

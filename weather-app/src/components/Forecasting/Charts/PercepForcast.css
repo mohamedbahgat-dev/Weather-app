@@ -1,0 +1,24 @@
+.bar-chart {
+  width: 280px;
+  height: 155px;
+  border: 1px solid rgba(79, 78, 78, 0.326);
+  padding: 10px;
+  margin-left: 5px;
+  margin-block: 10px;
+  border-radius: 20px;
+}
+
+.pericept {
+  display: flex;
+  gap: 10px;
+  margin-left: 25px;
+  font-size: 12px;
+}
+
+.no-rain-alert {
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid rgb(141, 137, 137);
+  border-radius: 20px;
+}

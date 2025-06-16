@@ -1,5 +1,4 @@
 import "./NavBar.css";
-import { Link } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoMdNotifications } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
@@ -39,19 +38,13 @@ const NavBar = () => {
         }
       >
         <div className="logo-container">
-          <Link to={"/"}>
-            <img
-              className="logo-img"
-              src="../public/logo.png"
-              alt="SkyNow logo"
-            />
-          </Link>
+          <img
+            className="logo-img"
+            src="../public/logo.png"
+            alt="SkyNow logo"
+          />
         </div>
-        <div className="navigation-list">
-          <Link to="/">Home</Link>
 
-          <Link to="/forecast">14 days forecast</Link>
-        </div>
         <form className="search-form" action={search}>
           <input type="text" placeholder="search for a location" name="query" />
           <button className="search-btn" type="submit">

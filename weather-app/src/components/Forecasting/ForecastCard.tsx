@@ -1,5 +1,4 @@
 import "./ForecastCard.css";
-
 const ForecastCard = (props: any) => {
   return (
     <section className="forecast-item">
@@ -11,9 +10,14 @@ const ForecastCard = (props: any) => {
         </div>
       </div>
       <div className="weather">
-        <h3>{props.data.day.avgtemp_c}°C</h3>
+        <div className="uv">
+          <p>UV</p>
+          <h3>{props.data.day.uv}</h3>
+        </div>
+
         <div>
           <p>wind: {props.data.day.maxwind_kph} kph</p>
+
           <p>Humidity: {props.data.day.avghumidity}%</p>
         </div>
       </div>

@@ -12,7 +12,7 @@
 .condition {
   width: 50%;
   display: flex;
-  gap: 20px;
+  gap: 50px;
   justify-content: center;
   align-items: center;
 }
@@ -29,4 +29,18 @@
 
 .condition img {
   width: 2.2rem;
+}
+
+.uv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.wind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
 }

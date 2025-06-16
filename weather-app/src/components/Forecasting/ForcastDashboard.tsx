@@ -1,13 +1,12 @@
 import "./ForecastDashboard.css";
-import TempForecast from "./Charts/TempForecast";
-
+import TempForecast from "./Charts/Temprature/TempForecast";
 import { useForcastData, useCurrentWeather } from "../../Store";
 import { FetchForecasted } from "../../Services/FetchData";
 import { useState, useEffect, useRef } from "react";
-import PercepForcast from "./Charts/PercepForcast";
-import TomorrowForecasted from "./Tomorrow/TomorrowForecasted";
+import PercepForcast from "./Charts/Percepitation/PercepForcast";
 import FiveDaysForecasted from "./FiveDays/FiveDaysForecasted";
-import HumidForcast from "./Charts/HumidForcast";
+import HumidForcast from "./Charts/Humidity/HumidForcast";
+import MinMaxTemp from "./Charts/MinMaxTemprature/MinMaxTemp";
 
 const ForecastDashboard = () => {
   const { searchQuery } = useCurrentWeather();
@@ -116,20 +115,27 @@ const ForecastDashboard = () => {
               <div>
                 {forcastedData ? (
                   <div className="forecast-board">
-                    <div className="show" ref={todayRef}>
-                      <TempForecast />
+                    <div className="show " ref={todayRef}>
+                      <TempForecast data={forcastedData[0]} />
                       <div className="secondary-charts">
-                        <PercepForcast />
-                        <HumidForcast />
+                        <PercepForcast data={forcastedData[0]} />
+                        <HumidForcast data={forcastedData[0]} />
                       </div>
                     </div>
 
                     <div className="hidden " ref={tomorrowRef}>
-                      <TomorrowForecasted />
+                      <TempForecast data={forcastedData[1]} />
+                      <div className="secondary-charts">
+                        <PercepForcast data={forcastedData[1]} />
+                        <HumidForcast data={forcastedData[1]} />
+                      </div>
                     </div>
 
-                    <div className="hidden " ref={FiveDaysRef}>
+                    <div className="hidden  " ref={FiveDaysRef}>
                       <FiveDaysForecasted />
+                      <div className="min-max-temp">
+                        <MinMaxTemp />
+                      </div>
                     </div>
                   </div>
                 ) : (

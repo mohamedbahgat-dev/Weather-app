@@ -1,7 +1,7 @@
 import "./TempForecast.css";
 import { IoIosTrendingDown } from "react-icons/io";
 import { IoIosTrendingUp } from "react-icons/io";
-import { useForcastData, useCurrentWeather } from "../../../Store";
+import { useForcastData, useCurrentWeather } from "../../../../Store";
 import { Line } from "react-chartjs-2";
 import {
   Chart as chartjs,
@@ -29,7 +29,7 @@ chartjs.register(
   Filler
 );
 
-const TempForecast = () => {
+const TempForecast = (props: any) => {
   const { forcastedData } = useForcastData();
   const { currentWeather } = useCurrentWeather();
 
@@ -55,7 +55,7 @@ const TempForecast = () => {
     datasets: [
       {
         label: false,
-        data: forcastedData[0].hour
+        data: props.data.hour
           .map((cast: any) => cast.temp_c)
           .filter((_: any, index: number) => index % 2 === 0),
         fill: true,
@@ -83,8 +83,8 @@ const TempForecast = () => {
     },
     elements: {
       point: {
-        pointRadius: 2,
-        pointStyle: "triangle",
+        pointRadius: 3,
+        pointStyle: "circle",
       },
     },
     plugins: {
@@ -121,7 +121,7 @@ const TempForecast = () => {
           <sup>o</sup>C
         </p>
         <div className="trend">
-          {currentWeather.temp_c > forcastedData[0].day.avgtemp_c ? (
+          {currentWeather.temp_c > props.data.day.avgtemp_c ? (
             <IoIosTrendingUp size={20} color={"#2ECC40"} />
           ) : (
             <IoIosTrendingDown size={20} color={"red"} />

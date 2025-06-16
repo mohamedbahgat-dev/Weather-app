@@ -4,11 +4,12 @@
   margin-top: 30px;
   width: 600px;
   height: 230px;
-  margin-inline: 15px;
+  margin-left: 10px;
   margin-bottom: 20px;
   margin-top: -5px;
-  border: 1px solid rgba(79, 78, 78, 0.326);
   border-radius: 20px;
+  padding: 10px;
+  background-color: white;
 }
 
 .temp-trend {

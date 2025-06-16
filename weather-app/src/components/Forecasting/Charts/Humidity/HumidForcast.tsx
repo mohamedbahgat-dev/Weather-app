@@ -1,13 +1,12 @@
-import "./PercepForcast.css";
-import { IoIosTrendingDown } from "react-icons/io";
-import { IoIosTrendingUp } from "react-icons/io";
-import { useForcastData, useCurrentWeather } from "../../../Store";
-import { Bar } from "react-chartjs-2";
+import "./HumidForcast.css";
+
+import { Line } from "react-chartjs-2";
 import {
   Chart as chartjs,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
@@ -18,51 +17,40 @@ import {
 chartjs.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
   plugins,
   Filler
 );
-const PercepForcast = () => {
-  const { forcastedData } = useForcastData();
-  const { currentWeather } = useCurrentWeather();
 
-  const barCahrtData: any = {
+const HumidForcast = (props: any) => {
+  const lineCahrtData: any = {
     labels: [
-      "1AM",
       "2AM",
-      "3AM",
       "4AM",
-      "5AM",
       "6AM",
-      "7AM",
       "8AM",
-      "9AM",
       "10AM",
-      "11AM",
       "12PM",
-      "1PM",
       "2PM",
-      "3PM",
       "4PM",
-      "5PM",
       "6PM",
-      "7PM",
       "8PM",
-      "9PM",
       "10PM",
-      "11PM",
       "12AM",
     ],
     datasets: [
       {
         label: false,
-        data: forcastedData[0].hour.map((cast: any) => cast.precip_mm),
+        data: props.data.hour
+          .map((cast: any) => cast.humidity)
+          .filter((_: any, index: number) => index % 2 === 0),
         fill: true,
         borderColor: "rgb(255, 195, 99)",
-        backgroundColor: "rgba(136, 191, 223, 0.81)",
+        backgroundColor: "rgba(223, 194, 136, 0.2)",
         tension: 0.4,
       },
     ],
@@ -116,23 +104,15 @@ const PercepForcast = () => {
 
   return (
     <section>
-      <div className="pericept">
-        <p>Precipitation Probability </p>
-        <p>{forcastedData[0].day.totalprecip_mm} mm</p>
-        <p>{}</p>
+      <div className="humid-trend">
+        <p>Humidity trend</p>
+        <p>{props.data.day.avghumidity}%</p>
       </div>
-
-      <div>
-        {forcastedData[0].day.totalprecip_mm === 0 ? (
-          <h3 className="no-rain-alert">There are no rain Today</h3>
-        ) : (
-          <div className="bar-chart">
-            <Bar options={options} data={barCahrtData} />
-          </div>
-        )}
+      <div className="humid-line-chart">
+        <Line options={options} data={lineCahrtData} />
       </div>
     </section>
   );
 };
 
-export default PercepForcast;
+export default HumidForcast;

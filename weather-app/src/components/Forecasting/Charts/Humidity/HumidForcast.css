@@ -1,9 +1,8 @@
 .humid-line-chart {
-  border: 1px solid rgba(79, 78, 78, 0.326);
+  background-color: white;
   border-radius: 20px;
-  margin-block: 8px;
-  width: 300px;
-  height: 155px;
+  width: 270px;
+  height: 150px;
   padding: 10px;
 }
 

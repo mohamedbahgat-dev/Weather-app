@@ -118,3 +118,10 @@ body {
   font-family: "poppins";
   cursor: pointer;
 }
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}

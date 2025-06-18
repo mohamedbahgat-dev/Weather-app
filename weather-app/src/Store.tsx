@@ -53,7 +53,8 @@ interface CurrentData {
 interface CurrentStoreState {
   currentWeather: CurrentData[] | any;
   searchQuery: any;
-
+  location: any;
+  setLocation: (currentLocation: any) => void;
   setCurrentWeather: (currentWeather: CurrentData[]) => void;
   setSearchQuery: (query: any) => void;
 }
@@ -61,8 +62,10 @@ interface CurrentStoreState {
 export const useCurrentWeather = create<CurrentStoreState>((set) => ({
   currentWeather: [],
   searchQuery: "",
+  location: [],
   setCurrentWeather: (currentWeather) => set({ currentWeather }),
   setSearchQuery: (query) => set({ searchQuery: query }),
+  setLocation: (newlocation: any) => set({ location: newlocation }),
 }));
 
 interface astroData {

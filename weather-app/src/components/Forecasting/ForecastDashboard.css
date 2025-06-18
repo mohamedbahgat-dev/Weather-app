@@ -36,4 +36,6 @@
 .secondary-charts {
   display: flex;
   gap: 18px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }

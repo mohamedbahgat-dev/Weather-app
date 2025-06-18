@@ -5,7 +5,7 @@ import { FetchCurrentWeather } from "../../Services/FetchData.tsx";
 import { useCurrentWeather } from "../../Store.tsx";
 
 const MainDashboard: React.FC = () => {
-  const { currentWeather, searchQuery, setCurrentWeather } =
+  const { currentWeather, searchQuery, setCurrentWeather, setLocation } =
     useCurrentWeather();
   const [datetime, setDatetime] = useState<Date>(new Date());
 
@@ -24,6 +24,7 @@ const MainDashboard: React.FC = () => {
           setError("");
           const data = await response.json();
           setCurrentWeather(data.current);
+          setLocation(data.location);
         }
       } catch (error) {
         setError(error instanceof Error ? error.message : "An error occured");
@@ -33,6 +34,11 @@ const MainDashboard: React.FC = () => {
     };
     getCurrentWeather();
   }, [searchQuery]);
+
+  let hours: number | string = datetime.getHours();
+  const meridiem = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12;
+  hours = hours.toString().padStart(2, "0");
 
   useEffect(() => {
     const timeInterval = setInterval(() => {
@@ -52,8 +58,15 @@ const MainDashboard: React.FC = () => {
               <div>...Loading</div>
             ) : (
               <div>
-                <p>{searchQuery ? searchQuery : "Paris"}</p>
-                <p>{datetime.toLocaleString()}</p>
+                <p>
+                  {datetime.getDate().toString().padStart(2, "0")}-
+                  {(datetime.getMonth() + 1).toString().padStart(2, "0")}-
+                  {datetime.getFullYear()}
+                </p>
+                <p>
+                  {hours}:{datetime.getMinutes().toString().padStart(2, "0")}:
+                  {datetime.getSeconds().toString().padStart(2, "0")} {meridiem}
+                </p>
                 <div className="temp-card">
                   <img src={currentWeather.condition.icon} alt="weather icon" />
                   <div className="temp">

@@ -1,4 +1,5 @@
 import "./NavBar.css";
+import { MdLocationPin } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoMdNotifications } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
@@ -8,7 +9,7 @@ import { useState } from "react";
 import { useCurrentWeather } from "../../Store";
 
 const NavBar = () => {
-  const { setSearchQuery } = useCurrentWeather();
+  const { setSearchQuery, location } = useCurrentWeather();
 
   const [bgColor, setBgColor] = useState<string>("white");
   const [bgName, setBgName] = useState<string>("Light");
@@ -43,6 +44,12 @@ const NavBar = () => {
             src="../public/logo.png"
             alt="SkyNow logo"
           />
+        </div>
+        <div className="location">
+          <MdLocationPin size={30} color="#e96058" />
+          <h3>
+            {location.name}, {location.country}
+          </h3>
         </div>
 
         <form className="search-form" action={search}>

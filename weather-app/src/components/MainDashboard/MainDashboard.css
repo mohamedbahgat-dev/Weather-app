@@ -1,7 +1,6 @@
 .dashboard {
   background-color: #eaede4;
-
-  height: 29vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

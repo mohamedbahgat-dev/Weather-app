@@ -4,9 +4,14 @@ import SunMoon from "../SunMoonSummary/SunMoon";
 import ForecastDashboard from "../Forecasting/ForcastDashboard";
 import "./Home.css";
 
+import NavBar from "../Navigation/NavBar";
+
 const Home = () => {
   return (
     <div className="container">
+      <section className="navbar">
+        <NavBar />
+      </section>
       <section className="main">
         <MainDashboard />
         <MetaDashboard />

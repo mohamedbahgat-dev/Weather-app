@@ -5,13 +5,11 @@ body {
 }
 
 .nav {
-  background-color: #fbf4db;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px;
   padding: 10px;
   padding-inline: 30px;
 }
@@ -26,7 +24,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: rgba(230, 230, 230, 0.608);
   width: 25%;
   height: 30px;
   border-radius: 20px;
@@ -52,8 +50,19 @@ body {
   margin-right: 10px;
 }
 
+.location-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: rgb(244, 231, 208);
+  width: fit-content;
+  padding-inline: 10px;
+  border-radius: 25px;
+}
+
 .location-info h3 {
-  margin-left: 5px;
+  font-size: 12px;
 }
 
 .notification-icon {
@@ -72,6 +81,12 @@ body {
   margin-left: 10px;
 }
 
+.user-icon {
+  background-color: #dfe0e3;
+  padding: 10px;
+  border-radius: 100%;
+}
+
 .logo-container {
   display: flex;
   justify-content: center;
@@ -79,10 +94,6 @@ body {
   width: 50px;
   height: 50px;
   margin-left: 10px;
-}
-
-.logo-img {
-  width: 100px;
 }
 
 .theme-icon {
@@ -117,11 +128,4 @@ body {
   padding-inline: 8px;
   font-family: "poppins";
   cursor: pointer;
-}
-
-.location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
 }

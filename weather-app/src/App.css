@@ -1,0 +1,16 @@
+.sidebar {
+  grid-area: sidebar;
+}
+
+.home-dashboard {
+  grid-area: home;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    " sidebar home"
+    " sidebar home";
+}

@@ -1,13 +1,18 @@
 import Home from "./components/Home/Home";
 
-import NavBar from "./components/Navigation/NavBar";
-
 import "./App.css";
+import SideBar from "./components/SideBar/SideBar";
 
 const App = () => (
   <>
-    <NavBar />
-    <Home />
+    <div className="dashboard-container">
+      <div className="sidebar">
+        <SideBar />
+      </div>
+      <div className="home-dashboard">
+        <Home />
+      </div>
+    </div>
   </>
 );
 

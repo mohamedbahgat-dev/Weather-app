@@ -1,40 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Chivo:ital,wght@0,100..900;1,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,900;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&family=Vina+Sans&display=swap");
+
 .dashboard {
-  background-color: #eaede4;
+  font-family: "Instrument Sans";
+  background-color: #aacdf1;
+  color: black;
   height: 35vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
   margin-left: 20px;
-  padding-inline: 30px;
   border-radius: 10px;
+  background: #4ed7f1;
+  background: linear-gradient(
+    166deg,
+    rgb(253, 237, 127) 0%,
+    rgb(107, 197, 235) 20%,
+    rgb(171, 240, 225) 100%
+  );
+  box-shadow: 3px 3px 5px rgba(181, 179, 179, 0.707);
 }
 
-.header p {
-  text-align: center;
+.dashboard:hover {
+  box-shadow: 5px 5px 5px rgba(181, 179, 179, 0.707);
+  transition: 0.5s all;
+}
+
+.datetime-temp-container {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 25px;
+  gap: 200px;
+}
+
+.current-temp-container {
+  background-color: antiquewhite;
+  padding: 30px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 10px;
+  background: #fff9cf;
+  background: linear-gradient(
+    90deg,
+    rgb(235, 224, 146) 0%,
+    rgb(246, 242, 207) 100%
+  );
+  filter: drop-shadow(3px 5px 5px rgba(131, 131, 131, 0.702));
 }
 
 .temp-card {
   display: flex;
-  justify-content: start;
-  align-items: center;
-  width: 50%;
-}
-
-.temp {
-  display: flex;
-  align-items: first baseline;
+  flex-direction: column;
   justify-content: center;
-  margin-left: 20px;
-  margin-right: 50px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 20px;
-}
-
-article {
-  margin-bottom: 20px;
+  align-items: center;
+  height: 80px;
 }
 
 .temp-card img {
+  margin-top: -12px;
   width: 50px;
+}
+
+.temp {
+  margin-top: 5px;
+  font-size: 40px;
+  height: 30px;
+}
+
+.datetime-card {
+  justify-self: start;
+  line-height: 0.8;
+  width: 150px;
+  padding-block: 1px;
+  border-radius: 10px;
+}
+
+.datetime-card h2 {
+  margin-bottom: -3px;
+  font-size: 30px;
+}
+
+.minmax-temp {
+  display: flex;
+  justify-content: center;
+  min-width: 130px;
+  gap: 5px;
+  margin-top: -15px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.minmax-temp span {
+  font-weight: bold;
+}
+
+.hourly-temp {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 25px;
+  gap: 20px;
+  height: 60px;
+}
+
+.hourly-temp p {
+  font-size: 10px;
+}
+
+.hourly-temp img {
+  width: 50px;
+  height: 50px;
+}
+
+.hourly-temp div {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  text-align: center;
+  border-radius: 10px;
+  height: 120px;
+  background: #2a7b9b;
+
+  background: linear-gradient(
+    194deg,
+    rgba(246, 243, 209, 0.722) 0%,
+    rgb(235, 226, 147) 100%
+  );
+
+  filter: drop-shadow(3px 5px 5px rgba(131, 131, 131, 0.702));
+}
+
+.feels {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.feels span {
+  font-weight: bold;
 }

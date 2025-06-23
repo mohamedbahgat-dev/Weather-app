@@ -1,6 +1,6 @@
 .meta-dashboard {
   background-color: #eaede4;
-  height: 30vh;
+  height: 48vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -11,15 +11,16 @@
 }
 
 .meta-dashboard div {
-  background-color: rgb(255, 255, 255);
-  margin: 12px;
-  width: 28%;
-  height: 11vh;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  height: 18vh;
+  width: 28%;
+  margin: 10px;
+  margin-block: 20px;
   border-radius: 10px;
+  background-color: rgb(255, 255, 255);
 }
 
 .meta-dashboard div span {

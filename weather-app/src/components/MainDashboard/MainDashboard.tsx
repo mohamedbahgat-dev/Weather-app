@@ -1,18 +1,47 @@
 import { useEffect, useState } from "react";
-import { WiCelsius } from "react-icons/wi";
 import "./MainDashboard.css";
 import { FetchCurrentWeather } from "../../Services/FetchData.tsx";
-import { useCurrentWeather } from "../../Store.tsx";
+import { useCurrentWeather, useForcastData } from "../../Store.tsx";
 
 const MainDashboard: React.FC = () => {
   const { currentWeather, searchQuery, setCurrentWeather, setLocation } =
     useCurrentWeather();
+  const { forcastedData } = useForcastData();
+
   const [datetime, setDatetime] = useState<Date>(new Date());
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const monthsNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const term = searchQuery ? searchQuery : "paris";
+
+  useEffect(() => {
+    console.log(currentWeather);
+  }, [currentWeather]);
 
   useEffect(() => {
     const getCurrentWeather = async () => {
@@ -57,38 +86,88 @@ const MainDashboard: React.FC = () => {
             {isLoading ? (
               <div>...Loading</div>
             ) : (
-              <div>
-                <p>
-                  {datetime.getDate().toString().padStart(2, "0")}-
-                  {(datetime.getMonth() + 1).toString().padStart(2, "0")}-
-                  {datetime.getFullYear()}
-                </p>
-                <p>
-                  {hours}:{datetime.getMinutes().toString().padStart(2, "0")}:
-                  {datetime.getSeconds().toString().padStart(2, "0")} {meridiem}
-                </p>
-                <div className="temp-card">
-                  <img src={currentWeather.condition.icon} alt="weather icon" />
-                  <div className="temp">
-                    <h3>{currentWeather.temp_c}</h3>
+              <div className="main-dashboard-container">
+                <section className="datetime-temp-container">
+                  {/* date  */}
+                  <section className="datetime-container">
+                    <div className="datetime-card">
+                      <h2>{daysOfWeek[datetime.getDay()]}</h2>
+                      <p className="date">
+                        {`${datetime.getDate().toString().padStart(2, "0")} `}
+                        {`${monthsNames[datetime.getMonth() + 1]}, `}
+                        {datetime.getFullYear()}
+                      </p>
+                      <p>
+                        {hours}:
+                        {datetime.getMinutes().toString().padStart(2, "0")}{" "}
+                        {meridiem}
+                      </p>
+                    </div>
+                  </section>
 
-                    <WiCelsius size={30} />
+                  {/* current temp */}
+
+                  <section className="current-temp-container">
+                    <div className="temp-card">
+                      <img src={currentWeather?.condition.icon} alt="" />
+                      <h2 className="temp">{currentWeather?.temp_c}°C</h2>
+                    </div>
+                    <div className="minmax-temp">
+                      <p>
+                        Min: <span>{forcastedData[0]?.day.mintemp_c}°</span>
+                      </p>
+                      <p>
+                        Max: <span>{forcastedData[0]?.day.maxtemp_c}°</span>
+                      </p>
+                    </div>
+                  </section>
+                </section>
+
+                <section className="hourly-temp">
+                  <div>
+                    <p>04:00</p>
+                    <img
+                      src={forcastedData[0]?.hour[4].condition.icon}
+                      alt="icon"
+                    />
+                    <h3>{forcastedData[0]?.hour[4].temp_c}°</h3>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <p>{currentWeather.condition.text}</p>
-                    <p style={{ width: "120px" }}>
-                      feels like {currentWeather.feelslike_c} °C
-                    </p>
+                  <div>
+                    <p>08:00</p>
+                    <img
+                      src={forcastedData[0]?.hour[8].condition.icon}
+                      alt="icon"
+                    />
+                    <h3>{forcastedData[0]?.hour[8].temp_c}°</h3>
                   </div>
-                </div>
-                <article>Alerts</article>
+                  <div>
+                    <p>12:00</p>
+                    <img
+                      src={forcastedData[0]?.hour[12].condition.icon}
+                      alt="icon"
+                    />
+                    <h3>{forcastedData[0]?.hour[12].temp_c}°</h3>
+                  </div>
+                  <div>
+                    <p>16:00</p>
+                    <img
+                      src={forcastedData[0]?.hour[16].condition.icon}
+                      alt="icon"
+                    />
+                    <h3>{forcastedData[0]?.hour[16].temp_c}°</h3>
+                  </div>
+                  <div>
+                    <p>20:00</p>
+                    <img
+                      src={forcastedData[0]?.hour[20].condition.icon}
+                      alt="icon"
+                    />
+                    <h3>{forcastedData[0]?.hour[20].temp_c}°</h3>
+                  </div>
+                  <p className="feels">
+                    Feels like <span>{currentWeather.feelslike_c}°</span>
+                  </p>
+                </section>
               </div>
             )}
           </div>

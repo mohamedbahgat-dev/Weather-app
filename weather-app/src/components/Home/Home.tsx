@@ -1,7 +1,6 @@
 import MainDashboard from "../MainDashboard/MainDashboard";
 import MetaDashboard from "../MetaData/MetaDashboard";
-
-import ForecastDashboard from "../Forecasting/ForcastDashboard";
+import SideBar from "../SideBar/SideBar";
 import "./Home.css";
 
 import NavBar from "../Navigation/NavBar";
@@ -12,12 +11,12 @@ const Home = () => {
       <section className="navbar">
         <NavBar />
       </section>
+      <section className="sidebar">
+        <SideBar />
+      </section>
       <section className="main">
         <MainDashboard />
         <MetaDashboard />
-      </section>
-      <section className="forecast">
-        <ForecastDashboard />
       </section>
     </div>
   );

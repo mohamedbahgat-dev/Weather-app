@@ -2,46 +2,25 @@
 
 .dashboard {
   font-family: "Instrument Sans";
-  background-color: #aacdf1;
-  color: black;
-  height: 35vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  color: rgb(14, 9, 58);
+  height: 40vh;
   margin-left: 20px;
   border-radius: 10px;
-  background: #4ed7f1;
-  background: linear-gradient(
-    166deg,
-    rgb(253, 237, 127) 0%,
-    rgb(107, 197, 235) 20%,
-    rgb(171, 240, 225) 100%
-  );
   box-shadow: 3px 3px 5px rgba(181, 179, 179, 0.707);
-}
-
-.dashboard:hover {
-  box-shadow: 5px 5px 5px rgba(181, 179, 179, 0.707);
-  transition: 0.5s all;
 }
 
 .datetime-temp-container {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   margin-inline: 25px;
   gap: 200px;
-}
-
-.current-temp-container {
-  background-color: antiquewhite;
-  padding: 30px;
-  border-bottom-right-radius: 100px;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 10px;
-  background: #fff9cf;
-  background: linear-gradient(
-    90deg,
-    rgb(235, 224, 146) 0%,
-    rgb(246, 242, 207) 100%
-  );
-  filter: drop-shadow(3px 5px 5px rgba(131, 131, 131, 0.702));
+  margin-top: 5px;
+  margin-bottom: 25px;
 }
 
 .temp-card {
@@ -49,12 +28,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  margin-top: 20px;
 }
 
 .temp-card img {
   margin-top: -12px;
-  width: 50px;
+  width: 60px;
 }
 
 .temp {
@@ -64,7 +43,6 @@
 }
 
 .datetime-card {
-  justify-self: start;
   line-height: 0.8;
   width: 150px;
   padding-block: 1px;
@@ -116,10 +94,9 @@
   border-radius: 10px;
   height: 120px;
   background: #2a7b9b;
-
   background: linear-gradient(
     194deg,
-    rgba(246, 243, 209, 0.722) 0%,
+    rgba(246, 243, 209, 0.726) 0%,
     rgb(235, 226, 147) 100%
   );
 
@@ -128,7 +105,7 @@
 
 .feels {
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 15px !important;
 }
 
 .feels span {

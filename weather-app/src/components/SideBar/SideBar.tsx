@@ -1,5 +1,5 @@
 import "./SideBar.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PiMapPinAreaFill } from "react-icons/pi";
 import { RiDashboardFill } from "react-icons/ri";
 import { FaChartPie } from "react-icons/fa";
@@ -7,6 +7,7 @@ import { IoCalendarNumber } from "react-icons/io5";
 import { IoMdNotifications } from "react-icons/io";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   const [bgColor, setBgColor] = useState<string>("white");
@@ -21,22 +22,29 @@ const SideBar = () => {
   };
 
   return (
-    <section
-      className="sidebar-container"
-      style={
-        bgName === "Light"
-          ? { backgroundColor: "#fbf4db" }
-          : { backgroundColor: "#F8B55F" }
-      }
-    >
-      <div className="logo-container">
-        <img className="logo-img" src="../public/logo.png" alt="SkyNow logo" />
-      </div>
+    <section className="sidebar-container">
+      <img className="logo-img" src="../public/logo.png" alt="SkyNow logo" />
       <nav className="dashboard-nav">
-        <RiDashboardFill size={30} color={"gray"} />
-        <FaChartPie size={30} color={"gray"} />
-        <PiMapPinAreaFill size={30} color={"gray"} />
-        <IoCalendarNumber size={30} color={"gray"} />
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            isActive ? "active-nav" : "inactive-nav"
+          }
+        >
+          <RiDashboardFill size={30} color={"white"} />
+        </NavLink>
+
+        <NavLink
+          to={"/charts"}
+          className={({ isActive }) =>
+            isActive ? "active-nav" : "inactive-nav"
+          }
+        >
+          <FaChartPie size={30} color={"white"} />
+        </NavLink>
+
+        <PiMapPinAreaFill size={30} color={"white"} />
+        <IoCalendarNumber size={30} color={"white"} />
       </nav>
       <div className="notification-icon">
         <IoMdNotifications color="#332D56" size="1.5rem" />

@@ -1,8 +1,7 @@
 .forecast-board {
   background-color: #eaede4;
   border-radius: 10px;
-  margin-left: 20px;
-  height: auto;
+  margin-inline: 20px;
 }
 
 .forecast-btns {

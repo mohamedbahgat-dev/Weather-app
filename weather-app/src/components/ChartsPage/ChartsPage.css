@@ -1,0 +1,21 @@
+.navbar {
+  grid-area: navbar;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.forecasted-dash {
+  grid-area: forecasted;
+}
+
+.charts-dashboard {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "sidebar navbar"
+    " sidebar forecasted "
+    " sidebar forecasted ";
+}

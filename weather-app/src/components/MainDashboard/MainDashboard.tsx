@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import "./MainDashboard.css";
 import { FetchCurrentWeather } from "../../Services/FetchData.tsx";
 import { useCurrentWeather, useForcastData } from "../../Store.tsx";
+import clearSky from "../../../public/sky.jpg";
+import cloudySky from "../../../public/sky2.jpg";
+import Loader from "../Loader/Loader.tsx";
 
 const MainDashboard: React.FC = () => {
   const { currentWeather, searchQuery, setCurrentWeather, setLocation } =
@@ -43,6 +46,14 @@ const MainDashboard: React.FC = () => {
     console.log(currentWeather);
   }, [currentWeather]);
 
+  const backGround = () => {
+    if (currentWeather.temp_c > 20) {
+      return clearSky;
+    } else if (currentWeather.temp_c < 20) {
+      return cloudySky;
+    }
+  };
+
   useEffect(() => {
     const getCurrentWeather = async () => {
       try {
@@ -77,14 +88,23 @@ const MainDashboard: React.FC = () => {
   });
 
   return (
-    <section className="dashboard">
+    <section
+      className="dashboard"
+      style={{ backgroundImage: `url(${backGround()})` }}
+    >
       <div className="header">
         {error ? (
           <div>{error}</div>
         ) : (
-          <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             {isLoading ? (
-              <div>...Loading</div>
+              <Loader />
             ) : (
               <div className="main-dashboard-container">
                 <section className="datetime-temp-container">
@@ -165,6 +185,9 @@ const MainDashboard: React.FC = () => {
                     <h3>{forcastedData[0]?.hour[20].temp_c}°</h3>
                   </div>
                   <p className="feels">
+                    <p style={{ fontSize: "12px" }}>
+                      {currentWeather.condition.text}
+                    </p>
                     Feels like <span>{currentWeather.feelslike_c}°</span>
                   </p>
                 </section>

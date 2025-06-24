@@ -1,18 +1,19 @@
 import Home from "./components/Home/Home";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import ChartsPage from "./components/ChartsPage/ChartsPage";
 import "./App.css";
-import SideBar from "./components/SideBar/SideBar";
 
 const App = () => (
   <>
-    <div className="dashboard-container">
-      <div className="sidebar">
-        <SideBar />
-      </div>
-      <div className="home-dashboard">
-        <Home />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="" element={<Home />} />
+          <Route path="charts" element={<ChartsPage />} />
+        </Route>
+      </Routes>
+    </Router>
   </>
 );
 

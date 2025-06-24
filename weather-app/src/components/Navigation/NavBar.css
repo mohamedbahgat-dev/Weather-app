@@ -10,7 +10,8 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-inline: 30px;
+  margin-block: 10px;
+  margin-inline: 20px;
 }
 
 .location-info {
@@ -54,7 +55,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  background-color: rgb(244, 231, 208);
+  background-color: #f5f0cd;
   width: fit-content;
   padding-inline: 10px;
   border-radius: 25px;

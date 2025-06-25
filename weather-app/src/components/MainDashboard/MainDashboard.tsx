@@ -5,13 +5,15 @@ import { useCurrentWeather, useForcastData } from "../../Store.tsx";
 import clearSky from "../../../public/sky.jpg";
 import cloudySky from "../../../public/sky2.jpg";
 import Loader from "../Loader/Loader.tsx";
+import { FetchForecasted } from "../../Services/FetchData";
 
 const MainDashboard: React.FC = () => {
   const { currentWeather, searchQuery, setCurrentWeather, setLocation } =
     useCurrentWeather();
-  const { forcastedData } = useForcastData();
+  const { forcastedData, setForcastedData } = useForcastData();
 
   const [datetime, setDatetime] = useState<Date>(new Date());
+
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -65,6 +67,26 @@ const MainDashboard: React.FC = () => {
           const data = await response.json();
           setCurrentWeather(data.current);
           setLocation(data.location);
+        }
+      } catch (error) {
+        setError(error instanceof Error ? error.message : "An error occured");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getCurrentWeather();
+  }, [searchQuery]);
+
+  useEffect(() => {
+    const getCurrentWeather = async () => {
+      try {
+        const response = await FetchForecasted(term);
+        if (!response.ok) {
+          setError("Error Fetching Data");
+        } else {
+          setError("");
+          const data = await response.json();
+          setForcastedData(data.forecast.forecastday);
         }
       } catch (error) {
         setError(error instanceof Error ? error.message : "An error occured");
@@ -184,12 +206,12 @@ const MainDashboard: React.FC = () => {
                     />
                     <h3>{forcastedData[0]?.hour[20].temp_c}°</h3>
                   </div>
-                  <p className="feels">
+                  <span className="feels">
                     <p style={{ fontSize: "12px" }}>
-                      {currentWeather.condition.text}
+                      {currentWeather?.condition.text}
                     </p>
-                    Feels like <span>{currentWeather.feelslike_c}°</span>
-                  </p>
+                    Feels like <span>{currentWeather?.feelslike_c}°</span>
+                  </span>
                 </section>
               </div>
             )}

@@ -1,0 +1,14 @@
+.polydata-dashboard {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.poly-item {
+  width: 30vh;
+  height: 18vh;
+  background-color: cadetblue;
+}
+.rain-chance {
+}

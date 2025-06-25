@@ -1,18 +1,15 @@
 import "./ForecastDashboard.css";
 import TempForecast from "./Charts/Temprature/TempForecast";
-import { useForcastData, useCurrentWeather } from "../../Store";
-import { FetchForecasted } from "../../Services/FetchData";
-import { useState, useEffect, useRef } from "react";
+import { useForcastData } from "../../Store";
+import { useState, useRef } from "react";
 import PercepForcast from "./Charts/Percepitation/PercepForcast";
 import FiveDaysForecasted from "./FiveDays/FiveDaysForecasted";
 import HumidForcast from "./Charts/Humidity/HumidForcast";
 import MinMaxTemp from "./Charts/MinMaxTemprature/MinMaxTemp";
 
 const ForecastDashboard = () => {
-  const { searchQuery } = useCurrentWeather();
-  const { forcastedData, setForcastedData } = useForcastData();
-  const [error, setError] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { forcastedData } = useForcastData();
+
   const [activeToday, setActiveToday] = useState<boolean>(true);
   const [activeTomorrow, setActiveTomorrow] = useState<boolean>(false);
   const [activeFiveDays, setActiveFiveDays] = useState<boolean>(false);
@@ -47,28 +44,6 @@ const ForecastDashboard = () => {
     setActiveTomorrow(false);
     setActiveFiveDays(true);
   };
-
-  const term = searchQuery ? searchQuery : "paris";
-
-  useEffect(() => {
-    const getCurrentWeather = async () => {
-      try {
-        const response = await FetchForecasted(term);
-        if (!response.ok) {
-          setError("Error Fetching Data");
-        } else {
-          setError("");
-          const data = await response.json();
-          setForcastedData(data.forecast.forecastday);
-        }
-      } catch (error) {
-        setError(error instanceof Error ? error.message : "An error occured");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    getCurrentWeather();
-  }, [searchQuery]);
 
   return (
     <section className="forecast-board">
@@ -105,46 +80,36 @@ const ForecastDashboard = () => {
         </button>
       </div>
       <div>
-        {error ? (
-          <div>{error}</div>
-        ) : (
-          <div>
-            {isLoading ? (
-              <div>...Loading</div>
-            ) : (
-              <div>
-                {forcastedData ? (
-                  <div className="forecast-board">
-                    <div className="show " ref={todayRef}>
-                      <TempForecast data={forcastedData[0]} />
-                      <div className="secondary-charts">
-                        <PercepForcast data={forcastedData[0]} />
-                        <HumidForcast data={forcastedData[0]} />
-                      </div>
-                    </div>
-
-                    <div className="hidden " ref={tomorrowRef}>
-                      <TempForecast data={forcastedData[1]} />
-                      <div className="secondary-charts">
-                        <PercepForcast data={forcastedData[1]} />
-                        <HumidForcast data={forcastedData[1]} />
-                      </div>
-                    </div>
-
-                    <div className="hidden  " ref={FiveDaysRef}>
-                      <FiveDaysForecasted />
-                      <div className="min-max-temp">
-                        <MinMaxTemp />
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div>Data is Not available</div>
-                )}
+        <div>
+          {forcastedData ? (
+            <div className="forecast-board">
+              <div className="show " ref={todayRef}>
+                <TempForecast data={forcastedData[0]} />
+                <div className="secondary-charts">
+                  <PercepForcast data={forcastedData[0]} />
+                  <HumidForcast data={forcastedData[0]} />
+                </div>
               </div>
-            )}
-          </div>
-        )}
+
+              <div className="hidden " ref={tomorrowRef}>
+                <TempForecast data={forcastedData[1]} />
+                <div className="secondary-charts">
+                  <PercepForcast data={forcastedData[1]} />
+                  <HumidForcast data={forcastedData[1]} />
+                </div>
+              </div>
+
+              <div className="hidden  " ref={FiveDaysRef}>
+                <FiveDaysForecasted />
+                <div className="min-max-temp">
+                  <MinMaxTemp />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div>Data is Not available</div>
+          )}
+        </div>
       </div>
     </section>
   );

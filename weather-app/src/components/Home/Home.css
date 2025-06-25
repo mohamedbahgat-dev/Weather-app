@@ -10,9 +10,24 @@
   grid-area: sidebar;
 }
 
-.forecast {
-  grid-area: forecast;
-  margin-right: 20px;
+.polydata {
+  grid-area: polydata;
+  background-color: antiquewhite;
+  margin-inline: 20px;
+  border-radius: 10px;
+  height: 39vh;
+  padding: 20px;
+  box-shadow: -3px 3px 5px rgba(181, 179, 179, 0.707);
+}
+
+.other-cities {
+  grid-area: other-cities;
+  background-color: aquamarine;
+  margin-inline: 20px;
+  border-radius: 10px;
+  height: 34vh;
+  padding: 20px;
+  box-shadow: -3px 3px 5px rgba(181, 179, 179, 0.707);
 }
 
 .container {
@@ -21,5 +36,6 @@
   grid-template-rows: auto;
   grid-template-areas:
     " sidebar navbar navbar"
-    " sidebar main  forecast";
+    " sidebar main  polydata"
+    " sidebar main other-cities";
 }

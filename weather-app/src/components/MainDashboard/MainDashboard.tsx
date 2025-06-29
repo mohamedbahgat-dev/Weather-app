@@ -44,10 +44,6 @@ const MainDashboard: React.FC = () => {
 
   const term = searchQuery ? searchQuery : "paris";
 
-  useEffect(() => {
-    console.log(currentWeather);
-  }, [currentWeather]);
-
   const backGround = () => {
     if (currentWeather.temp_c > 20) {
       return clearSky;

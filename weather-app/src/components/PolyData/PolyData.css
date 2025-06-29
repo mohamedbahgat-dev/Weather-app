@@ -1,14 +1,64 @@
+.sunmoon-container {
+  width: 30vh;
+  grid-area: sunmoon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(
+    104deg,
+    rgba(246, 243, 209, 0.726) 0%,
+    rgb(235, 201, 147) 100%
+  );
+
+  filter: drop-shadow(3px 5px 5px rgba(131, 131, 131, 0.702));
+}
+
 .polydata-dashboard {
+  grid-area: polydata;
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.poly-item {
-  width: 30vh;
-  height: 18vh;
-  background-color: cadetblue;
+.polydata-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto;
+  grid-template-areas: " polydata sunmoon";
 }
-.rain-chance {
+
+.poly-item {
+  font-family: "Instrument Sans";
+  display: flex;
+  flex-direction: column;
+  width: 20vh;
+  height: 18vh;
+  border-radius: 10px;
+  background: #2a7b9b;
+  background: linear-gradient(
+    104deg,
+    rgb(246, 243, 209) 0%,
+    rgba(235, 226, 147, 0.563) 100%
+  );
+  filter: drop-shadow(3px 5px 5px rgba(131, 131, 131, 0.702));
+}
+
+.poly-item p:first-child {
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.poly-item p:nth-child(2) {
+  align-self: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.poly-icons {
+  align-self: flex-end;
+  margin-right: 20px;
 }

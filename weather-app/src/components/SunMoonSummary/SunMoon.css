@@ -1,25 +1,25 @@
 .sun-moon {
-  height: 16vh;
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  flex-direction: column;
   align-items: center;
-  background-color: #eaede4;
-  margin-left: 20px;
   border-radius: 10px;
 }
 
 .sun-moon div {
   text-align: center;
-  background-color: white;
-  width: 40%;
   border-radius: 20px;
 }
 
 .sunset,
 .sunrise {
+  font-size: 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+}
+
+.sunmoon-title {
+  font-size: 15px;
+  font-family: "Instrument Sans";
+  font-weight: 300;
 }

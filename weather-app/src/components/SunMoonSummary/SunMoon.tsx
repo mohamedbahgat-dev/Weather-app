@@ -43,16 +43,16 @@ const SunMoon = () => {
           ) : (
             <div className="sun-moon">
               <div className="sunrise">
-                <FiSunrise size={40} color={"#edcd02"} />
+                <FiSunrise size={40} color={"#FFC107"} />
                 <div>
-                  <p>Sunrise</p>
+                  <p className="sunmoon-title">Sunrise</p>
                   <h3>{astroData.sunrise}</h3>
                 </div>
               </div>
               <div className="sunset">
                 <FiSunset size={40} color={"#fd8f30"} />
                 <div>
-                  <p>Sunset</p>
+                  <p className="sunmoon-title">Sunset</p>
                   <h3>{astroData.sunset}</h3>
                 </div>
               </div>

@@ -11,6 +11,8 @@
 }
 
 .polydata {
+  background-size: cover;
+  background-repeat: no-repeat;
   grid-area: polydata;
   background-color: antiquewhite;
   margin-inline: 20px;
@@ -21,6 +23,8 @@
 }
 
 .other-cities {
+  background-size: cover;
+  background-repeat: no-repeat;
   grid-area: other-cities;
   background-color: aquamarine;
   margin-inline: 20px;

@@ -147,7 +147,10 @@ const MainDashboard: React.FC = () => {
 
                   <section className="current-temp-container">
                     <div className="temp-card">
-                      <img src={currentWeather?.condition.icon} alt="" />
+                      <img
+                        src={currentWeather?.condition.icon}
+                        alt="codition icon"
+                      />
                       <h2 className="temp">{currentWeather?.temp_c}°C</h2>
                     </div>
                     <div className="minmax-temp">

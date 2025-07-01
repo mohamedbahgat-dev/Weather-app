@@ -23,6 +23,9 @@
 }
 
 .other-cities {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-size: cover;
   background-repeat: no-repeat;
   grid-area: other-cities;

@@ -1,14 +1,21 @@
 import "./ForecastDashboard.css";
 import TempForecast from "./Charts/Temprature/TempForecast";
-import { useForcastData } from "../../Store";
-import { useState, useRef } from "react";
+import { FetchForecasted } from "../../Services/FetchData";
+import { useState, useRef, useEffect } from "react";
 import PercepForcast from "./Charts/Percepitation/PercepForcast";
 import FiveDaysForecasted from "./FiveDays/FiveDaysForecasted";
 import HumidForcast from "./Charts/Humidity/HumidForcast";
 import MinMaxTemp from "./Charts/MinMaxTemprature/MinMaxTemp";
+import { useCurrentWeather, useForcastData } from "../../Store.tsx";
 
 const ForecastDashboard = () => {
-  const { forcastedData } = useForcastData();
+  const { forcastedData, setForcastedData } = useForcastData();
+  const { searchQuery } = useCurrentWeather();
+
+  const [error, setError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const term = searchQuery ? searchQuery : "paris";
 
   const [activeToday, setActiveToday] = useState<boolean>(true);
   const [activeTomorrow, setActiveTomorrow] = useState<boolean>(false);
@@ -44,6 +51,34 @@ const ForecastDashboard = () => {
     setActiveTomorrow(false);
     setActiveFiveDays(true);
   };
+
+  useEffect(() => {
+    const getForeCastedtWeather = async () => {
+      try {
+        const response = await FetchForecasted(term);
+        if (!response.ok) {
+          setError("Error Fetching Data");
+        } else {
+          setError("");
+          const data = await response.json();
+          setForcastedData(data.forecast.forecastday);
+        }
+      } catch (error) {
+        setError(error instanceof Error ? error.message : "An error occured");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getForeCastedtWeather();
+  }, [searchQuery]);
+
+  if (error) {
+    return <div>Error getting Data</div>;
+  }
+
+  if (isLoading) {
+    return <div>...Loading</div>;
+  }
 
   return (
     <section className="forecast-board">

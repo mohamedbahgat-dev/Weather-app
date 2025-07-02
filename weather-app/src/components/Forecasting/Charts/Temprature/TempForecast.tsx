@@ -59,8 +59,28 @@ const TempForecast = (props: any) => {
           .map((cast: any) => cast.temp_c)
           .filter((_: any, index: number) => index % 2 === 0),
         fill: true,
-        borderColor: "rgb(255, 195, 99)",
-        backgroundColor: "rgba(223, 194, 136, 0.2)",
+        borderColor: "rgb(255, 156, 99)",
+        backgroundColor: (context: any) => {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
+
+          if (!chartArea) {
+            // This case happens on initial render
+            return;
+          }
+
+          // Create a linear gradient based on chart area dimensions
+          const gradient = ctx.createLinearGradient(
+            0,
+            chartArea.bottom,
+            0,
+            chartArea.top
+          );
+          gradient.addColorStop(0, "rgba(238, 136, 105, 0)"); // Bottom color
+          gradient.addColorStop(1, "rgba(247, 139, 89, 0.8)"); // Top color
+
+          return gradient;
+        },
         tension: 0.4,
       },
     ],
@@ -97,6 +117,12 @@ const TempForecast = (props: any) => {
         grid: {
           display: false,
         },
+        ticks: {
+          display: false,
+        },
+        border: {
+          display: false,
+        },
       },
       y: {
         grid: {
@@ -113,7 +139,7 @@ const TempForecast = (props: any) => {
   };
 
   return (
-    <section>
+    <section className="temp-line-chart">
       <div className="temp-trend">
         <p>Temprature trend</p>
         <p>

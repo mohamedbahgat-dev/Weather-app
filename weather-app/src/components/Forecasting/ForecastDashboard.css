@@ -1,5 +1,4 @@
 .forecast-board {
-  background-color: #eaede4;
   border-radius: 10px;
   margin-inline: 20px;
 }
@@ -15,6 +14,7 @@
 
 .forecast-btns button {
   margin: 5px;
+  margin-bottom: 20px;
   padding: 5px;
   padding-inline: 10px;
   border: none;

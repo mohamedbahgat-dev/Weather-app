@@ -38,8 +38,8 @@ const CityTemp = (props: any) => {
           ) : (
             <div className="city-temp">
               <div>
-                <h2>{cityTemp?.temp_c}</h2>
-                <p>{props.city}</p>
+                <h2 className="city-temp-c">{cityTemp?.temp_c}</h2>
+                <p className="city-name">{props.city.toUpperCase()}</p>
               </div>
               <img src={cityTemp.condition.icon} alt="condition icon" />
             </div>

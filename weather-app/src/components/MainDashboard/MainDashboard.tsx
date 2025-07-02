@@ -74,7 +74,7 @@ const MainDashboard: React.FC = () => {
   }, [searchQuery]);
 
   useEffect(() => {
-    const getCurrentWeather = async () => {
+    const getForeCastedtWeather = async () => {
       try {
         const response = await FetchForecasted(term);
         if (!response.ok) {
@@ -90,7 +90,7 @@ const MainDashboard: React.FC = () => {
         setIsLoading(false);
       }
     };
-    getCurrentWeather();
+    getForeCastedtWeather();
   }, [searchQuery]);
 
   let hours: number | string = datetime.getHours();

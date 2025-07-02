@@ -8,14 +8,15 @@
 
 .forecasted-dash {
   grid-area: forecasted;
+  height: 90vh;
 }
 
 .charts-dashboard {
   display: grid;
-  grid-template-columns: 5% 95%;
+  grid-template-columns: 5% 60%;
   grid-template-rows: auto;
   grid-template-areas:
-    "sidebar navbar"
-    " sidebar forecasted "
-    " sidebar forecasted ";
+    "sidebar navbar navbar"
+    " sidebar forecasted ."
+    " sidebar forecasted .";
 }

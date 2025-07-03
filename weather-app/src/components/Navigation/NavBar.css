@@ -14,12 +14,6 @@ body {
   margin-inline: 20px;
 }
 
-.location-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .search-form {
   display: flex;
   justify-content: space-between;

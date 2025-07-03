@@ -49,8 +49,28 @@ const HumidForcast = (props: any) => {
           .map((cast: any) => cast.humidity)
           .filter((_: any, index: number) => index % 2 === 0),
         fill: true,
-        borderColor: "rgb(255, 195, 99)",
-        backgroundColor: "rgba(223, 194, 136, 0.2)",
+        borderColor: "rgb(245, 217, 172)",
+        backgroundColor: (context: any) => {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
+
+          if (!chartArea) {
+            // This case happens on initial render
+            return;
+          }
+
+          // Create a linear gradient based on chart area dimensions
+          const gradient = ctx.createLinearGradient(
+            0,
+            chartArea.bottom,
+            0,
+            chartArea.top
+          );
+          gradient.addColorStop(0, "rgba(162, 157, 155, 0)"); // Bottom color
+          gradient.addColorStop(1, "rgba(198, 195, 193, 0.8)"); // Top color
+
+          return gradient;
+        },
         tension: 0.4,
       },
     ],
@@ -87,6 +107,12 @@ const HumidForcast = (props: any) => {
         grid: {
           display: false,
         },
+        ticks: {
+          display: false,
+        },
+        border: {
+          display: false,
+        },
       },
       y: {
         grid: {
@@ -94,6 +120,7 @@ const HumidForcast = (props: any) => {
         },
         ticks: {
           display: false,
+          stepSize: 20,
         },
         border: {
           display: false,
@@ -103,9 +130,9 @@ const HumidForcast = (props: any) => {
   };
 
   return (
-    <section>
+    <section className="humidity-chart-container">
       <div className="humid-trend">
-        <p>Humidity trend</p>
+        <p>Humidity</p>
         <p>{props.data.day.avghumidity}%</p>
       </div>
       <div className="humid-line-chart">

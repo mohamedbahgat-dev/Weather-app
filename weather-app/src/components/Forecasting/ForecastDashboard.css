@@ -1,6 +1,9 @@
 .forecast-board {
+  font-family: "Instrument Sans";
   border-radius: 10px;
   margin-inline: 20px;
+
+  background-color: whitesmoke;
 }
 
 .forecast-btns {
@@ -34,7 +37,6 @@
 
 .secondary-charts {
   display: flex;
+  margin-bottom: 30px;
   gap: 18px;
-  margin-left: 10px;
-  margin-bottom: 20px;
 }

@@ -15,7 +15,6 @@ import {
   plugins,
   Filler,
 } from "chart.js";
-import { useEffect } from "react";
 
 chartjs.register(
   CategoryScale,
@@ -32,10 +31,6 @@ chartjs.register(
 const TempForecast = (props: any) => {
   const { forcastedData } = useForcastData();
   const { currentWeather } = useCurrentWeather();
-
-  useEffect(() => {
-    console.log(forcastedData);
-  }, []);
 
   const lineCahrtData: any = {
     labels: [
@@ -59,7 +54,7 @@ const TempForecast = (props: any) => {
           .map((cast: any) => cast.temp_c)
           .filter((_: any, index: number) => index % 2 === 0),
         fill: true,
-        borderColor: "rgb(255, 156, 99)",
+        borderColor: "rgb(246, 220, 181)",
         backgroundColor: (context: any) => {
           const chart = context.chart;
           const { ctx, chartArea } = chart;
@@ -76,8 +71,8 @@ const TempForecast = (props: any) => {
             0,
             chartArea.top
           );
-          gradient.addColorStop(0, "rgba(238, 136, 105, 0)"); // Bottom color
-          gradient.addColorStop(1, "rgba(247, 139, 89, 0.8)"); // Top color
+          gradient.addColorStop(0, "rgba(162, 157, 155, 0)"); // Bottom color
+          gradient.addColorStop(1, "rgba(198, 195, 193, 0.8)"); // Top color
 
           return gradient;
         },
@@ -88,7 +83,6 @@ const TempForecast = (props: any) => {
 
   const options = {
     responsive: true,
-
     tooltip: {
       enabled: false, // Disable tooltips
     },
@@ -98,12 +92,12 @@ const TempForecast = (props: any) => {
       align: "top", // Align the labels to the top of the points
       formatter: (value: any) => value, // Show the value as the label
       font: {
-        size: 12,
+        size: 10,
       },
     },
     elements: {
       point: {
-        pointRadius: 3,
+        pointRadius: 2,
         pointStyle: "circle",
       },
     },
@@ -118,7 +112,7 @@ const TempForecast = (props: any) => {
           display: false,
         },
         ticks: {
-          display: false,
+          display: true,
         },
         border: {
           display: false,
@@ -130,6 +124,7 @@ const TempForecast = (props: any) => {
         },
         ticks: {
           display: false,
+          stepSize: 10,
         },
         border: {
           display: false,
@@ -144,7 +139,7 @@ const TempForecast = (props: any) => {
         <p>Temprature trend</p>
         <p>
           {forcastedData[0].day.avgtemp_c}
-          <sup>o</sup>C
+          <sup>o</sup>
         </p>
         <div className="trend">
           {currentWeather.temp_c > props.data.day.avgtemp_c ? (

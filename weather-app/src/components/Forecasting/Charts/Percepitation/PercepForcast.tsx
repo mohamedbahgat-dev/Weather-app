@@ -56,7 +56,7 @@ const PercepForcast = (props: any) => {
         data: props.data.hour.map((cast: any) => cast.precip_mm),
         fill: true,
         borderColor: "rgb(255, 195, 99)",
-        backgroundColor: "rgba(136, 191, 223, 0.81)",
+        backgroundColor: "rgba(255, 205, 125, 0.81)",
         tension: 0.4,
       },
     ],
@@ -64,7 +64,7 @@ const PercepForcast = (props: any) => {
 
   const options = {
     responsive: true,
-
+    maintainAspectRatio: false,
     tooltip: {
       enabled: false, // Disable tooltips
     },
@@ -93,6 +93,12 @@ const PercepForcast = (props: any) => {
         grid: {
           display: false,
         },
+        ticks: {
+          display: false,
+        },
+        border: {
+          display: true,
+        },
       },
       y: {
         grid: {
@@ -109,14 +115,15 @@ const PercepForcast = (props: any) => {
   };
 
   return (
-    <section>
+    <section className="percept-chart-container">
       <div className="pericept">
-        <p>Precipitation Probability </p>
-        <p>{props.data.day.totalprecip_mm} mm</p>
-        <p>{}</p>
+        <p>Precipitation </p>
+        <p>
+          {props.data.day.totalprecip_mm} <small>mm</small>
+        </p>
       </div>
 
-      <div>
+      <div className=" percept-chart">
         {props.data.day.totalprecip_mm === 0 ? (
           <h3 className="no-rain-alert">There are no rain Today</h3>
         ) : (

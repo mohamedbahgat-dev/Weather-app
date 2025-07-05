@@ -5,13 +5,14 @@
   height: 100%;
   border-right: 0.3px solid rgba(2, 62, 78, 0.257);
   gap: 80px;
-  background-color: rgb(212, 215, 217);
-
+  background-color: rgb(207, 208, 208);
   box-shadow: 2px 2px 3px rgb(237, 218, 195);
 }
 
 .logo-img {
   width: 72px;
+
+  border-radius: 10px;
 }
 
 .dashboard-nav {

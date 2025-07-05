@@ -2,8 +2,7 @@
   font-family: "Instrument Sans";
   border-radius: 10px;
   margin-inline: 20px;
-
-  background-color: whitesmoke;
+  background-color: rgba(236, 235, 235, 0.379);
 }
 
 .forecast-btns {

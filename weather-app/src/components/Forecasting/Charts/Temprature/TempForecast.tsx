@@ -71,8 +71,8 @@ const TempForecast = (props: any) => {
             0,
             chartArea.top
           );
-          gradient.addColorStop(0, "rgba(162, 157, 155, 0)"); // Bottom color
-          gradient.addColorStop(1, "rgba(198, 195, 193, 0.8)"); // Top color
+          gradient.addColorStop(0, "rgba(140, 213, 242, 0)"); // Bottom color
+          gradient.addColorStop(1, "rgba(193, 196, 198, 0.8)"); // Top color
 
           return gradient;
         },

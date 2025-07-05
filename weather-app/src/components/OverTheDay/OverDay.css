@@ -1,0 +1,52 @@
+.overday-container {
+  font-family: "Instrument Sans";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.overday-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(127, 229, 255);
+  margin: 2px;
+  padding-block: px;
+  width: 140px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.overday-hour {
+  align-self: self-start;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.overday-value {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.overday-symbol {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  font-weight: bold;
+}
+
+.overday-card img {
+  width: 22px;
+  align-self: flex-end;
+  margin-right: 10px;
+}

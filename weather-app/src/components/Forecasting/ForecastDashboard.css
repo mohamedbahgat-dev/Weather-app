@@ -2,7 +2,6 @@
   font-family: "Instrument Sans";
   border-radius: 10px;
   margin-inline: 20px;
-  background-color: rgba(236, 235, 235, 0.379);
 }
 
 .forecast-btns {
@@ -11,12 +10,10 @@
   justify-content: start;
   align-items: center;
   margin-left: 30px;
-  padding-top: 20px;
 }
 
 .forecast-btns button {
-  margin: 5px;
-  margin-bottom: 20px;
+  margin-inline: 5px;
   padding: 5px;
   padding-inline: 10px;
   border: none;
@@ -31,11 +28,12 @@
 
 .show {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .secondary-charts {
   display: flex;
-  margin-bottom: 30px;
+
   gap: 18px;
 }

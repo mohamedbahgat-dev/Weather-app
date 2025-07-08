@@ -2,7 +2,6 @@ import "./ChartsPage.css";
 import SideBar from "../SideBar/SideBar";
 import ForecastDashboard from "../Forecasting/ForcastDashboard";
 import NavBar from "../Navigation/NavBar";
-import OverDay from "../OverTheDay/OverDay";
 
 const ChartsPage = () => {
   return (
@@ -15,9 +14,6 @@ const ChartsPage = () => {
       </section>
       <section className="forecasted-dash">
         <ForecastDashboard />
-      </section>
-      <section className="overday-dashboard">
-        <OverDay />
       </section>
     </div>
   );

@@ -11,17 +11,12 @@
   height: 90vh;
 }
 
-.overday-dashboard {
-  grid-area: overday;
-  margin-right: 20px;
-}
-
 .charts-dashboard {
   display: grid;
   grid-template-columns: 5% 50% 45%;
   grid-template-rows: auto;
   grid-template-areas:
     "sidebar navbar navbar"
-    " sidebar forecasted overday"
-    " sidebar forecasted overday";
+    " sidebar forecasted forecasted"
+    " sidebar forecasted forecasted";
 }

@@ -7,6 +7,7 @@ import FiveDaysForecasted from "./FiveDays/FiveDaysForecasted";
 import HumidForcast from "./Charts/Humidity/HumidForcast";
 import MinMaxTemp from "./Charts/MinMaxTemprature/MinMaxTemp";
 import { useCurrentWeather, useForcastData } from "../../Store.tsx";
+import OverDay from "../OverTheDay/OverDay.tsx";
 
 const ForecastDashboard = () => {
   const { forcastedData, setForcastedData } = useForcastData();
@@ -118,23 +119,33 @@ const ForecastDashboard = () => {
         <div>
           {forcastedData ? (
             <div className="forecast-board">
-              <div className="show " ref={todayRef}>
-                <TempForecast data={forcastedData[0]} />
-                <div className="secondary-charts">
-                  <PercepForcast data={forcastedData[0]} />
-                  <HumidForcast data={forcastedData[0]} />
+              <div className="show" ref={todayRef}>
+                <div>
+                  <TempForecast data={forcastedData[0]} />
+                  <div className="secondary-charts">
+                    <PercepForcast data={forcastedData[0]} />
+                    <HumidForcast data={forcastedData[0]} />
+                  </div>
+                </div>
+                <div>
+                  <OverDay data={forcastedData[0]} />
                 </div>
               </div>
 
-              <div className="hidden " ref={tomorrowRef}>
-                <TempForecast data={forcastedData[1]} />
-                <div className="secondary-charts">
-                  <PercepForcast data={forcastedData[1]} />
-                  <HumidForcast data={forcastedData[1]} />
+              <div className="hidden" ref={tomorrowRef}>
+                <div>
+                  <TempForecast data={forcastedData[1]} />
+                  <div className="secondary-charts">
+                    <PercepForcast data={forcastedData[1]} />
+                    <HumidForcast data={forcastedData[1]} />
+                  </div>
+                </div>
+                <div>
+                  <OverDay data={forcastedData[1]} />
                 </div>
               </div>
 
-              <div className="hidden  " ref={FiveDaysRef}>
+              <div className="hidden" ref={FiveDaysRef}>
                 <FiveDaysForecasted />
                 <div className="min-max-temp">
                   <MinMaxTemp />

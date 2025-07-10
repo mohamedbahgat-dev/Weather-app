@@ -127,7 +127,7 @@ const ForecastDashboard = () => {
                     <HumidForcast data={forcastedData[0]} />
                   </div>
                 </div>
-                <div>
+                <div className="overday-dash">
                   <OverDay data={forcastedData[0]} />
                 </div>
               </div>

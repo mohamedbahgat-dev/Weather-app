@@ -1,0 +1,22 @@
+.map-navbar {
+  grid-area: navbar;
+}
+
+.map-sidebar {
+  grid-area: sidebar;
+}
+
+.map {
+  grid-area: map;
+  height: 90vh;
+}
+
+.map-dashboard {
+  display: grid;
+  grid-template-columns: 5% 50% 45%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "sidebar navbar navbar"
+    " sidebar map map"
+    " sidebar map map";
+}

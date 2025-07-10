@@ -43,7 +43,15 @@ const SideBar = () => {
           <FaChartPie size={30} color={"white"} />
         </NavLink>
 
-        <PiMapPinAreaFill size={30} color={"white"} />
+        <NavLink
+          to={"/map"}
+          className={({ isActive }) =>
+            isActive ? "active-nav" : "inactive-nav"
+          }
+        >
+          <PiMapPinAreaFill size={30} color={"white"} />
+        </NavLink>
+
         <IoCalendarNumber size={30} color={"white"} />
       </nav>
       <div className="notification-icon">

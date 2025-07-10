@@ -10,6 +10,7 @@
   justify-content: start;
   align-items: center;
   margin-left: 30px;
+  margin-bottom: 20px;
 }
 
 .forecast-btns button {
@@ -34,6 +35,5 @@
 
 .secondary-charts {
   display: flex;
-
   gap: 18px;
 }

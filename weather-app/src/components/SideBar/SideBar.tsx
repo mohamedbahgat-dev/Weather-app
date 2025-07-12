@@ -3,7 +3,6 @@ import { useState } from "react";
 import { PiMapPinAreaFill } from "react-icons/pi";
 import { RiDashboardFill } from "react-icons/ri";
 import { FaChartPie } from "react-icons/fa";
-import { IoCalendarNumber } from "react-icons/io5";
 import { IoMdNotifications } from "react-icons/io";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
@@ -52,7 +51,7 @@ const SideBar = () => {
           <PiMapPinAreaFill size={30} color={"white"} />
         </NavLink>
 
-        <IoCalendarNumber size={30} color={"white"} />
+     
       </nav>
       <div className="notification-icon">
         <IoMdNotifications color="#332D56" size="1.5rem" />

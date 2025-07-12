@@ -63,8 +63,7 @@ const PercepForcast = (props: any) => {
   };
 
   const options = {
-    responsive: true,
-    maintainAspectRatio: false,
+   
     tooltip: {
       enabled: false, // Disable tooltips
     },

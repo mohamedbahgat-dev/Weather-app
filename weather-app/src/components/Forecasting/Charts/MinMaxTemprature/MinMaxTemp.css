@@ -1,5 +1,6 @@
 .min-max-linechart {
-  background-color: white;
+  background-color: rgb(230, 247, 253);
   border: none;
   padding: 10px;
+  border-radius: 20px;
 }

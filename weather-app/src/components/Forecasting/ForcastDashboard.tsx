@@ -119,8 +119,8 @@ const ForecastDashboard = () => {
         <div>
           {forcastedData ? (
             <div className="forecast-board">
-              <div className="show" ref={todayRef}>
-                <div>
+              <div className="show"  ref={todayRef}>
+                <div className="charts-board">
                   <TempForecast data={forcastedData[0]} />
                   <div className="secondary-charts">
                     <PercepForcast data={forcastedData[0]} />
@@ -132,15 +132,15 @@ const ForecastDashboard = () => {
                 </div>
               </div>
 
-              <div className="hidden" ref={tomorrowRef}>
-                <div>
+              <div className="hidden"  ref={tomorrowRef}>
+                <div className="charts-board">
                   <TempForecast data={forcastedData[1]} />
                   <div className="secondary-charts">
                     <PercepForcast data={forcastedData[1]} />
                     <HumidForcast data={forcastedData[1]} />
                   </div>
                 </div>
-                <div>
+                <div className="overday-dash">
                   <OverDay data={forcastedData[1]} />
                 </div>
               </div>

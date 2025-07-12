@@ -78,7 +78,6 @@ const HumidForcast = (props: any) => {
 
   const options = {
     responsive: true,
-
     tooltip: {
       enabled: false, // Disable tooltips
     },

@@ -56,14 +56,14 @@ const PercepForcast = (props: any) => {
         data: props.data.hour.map((cast: any) => cast.precip_mm),
         fill: true,
         borderColor: "rgb(163, 213, 244)",
-        backgroundColor: "rgba(125, 209, 255, 0.81)",
+        backgroundColor: "rgba(115, 164, 194, 0.81)",
         tension: 0.4,
       },
     ],
   };
 
   const options = {
-   
+    responsive: true,
     tooltip: {
       enabled: false, // Disable tooltips
     },
@@ -71,7 +71,7 @@ const PercepForcast = (props: any) => {
       display: true, // Enable data labels
       anchor: "end", // Position the labels at the end of the line
       align: "top", // Align the labels to the top of the points
-      formatter: (value: any) => value, // Show the value as the label
+      // formatter: (value: any) => value, // Show the value as the label
       font: {
         size: 12,
       },
@@ -122,14 +122,8 @@ const PercepForcast = (props: any) => {
         </p>
       </div>
 
-      <div className=" percept-chart">
-        {props.data.day.totalprecip_mm === 0 ? (
-          <h3 className="no-rain-alert">There are no rain Today</h3>
-        ) : (
-          <div className="bar-chart">
-            <Bar options={options} data={barCahrtData} />
-          </div>
-        )}
+      <div className="bar-chart">
+        <Bar options={options} data={barCahrtData} />
       </div>
     </section>
   );

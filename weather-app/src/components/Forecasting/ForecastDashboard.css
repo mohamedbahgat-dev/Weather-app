@@ -41,7 +41,8 @@
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
   grid-template-areas:
-    "charts overday "
+    "charts overday"
+    "charts overday"
    
 }
 

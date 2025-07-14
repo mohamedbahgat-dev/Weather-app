@@ -5,10 +5,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   color: rgb(14, 9, 58);
   height: 40vh;
-  margin-left: 20px;
+  margin-inline: 20px;
   border-radius: 10px;
   box-shadow: 3px 3px 5px rgba(181, 179, 179, 0.707);
 }
@@ -38,7 +39,7 @@
 
 .temp {
   margin-top: 5px;
-  font-size: 40px;
+  font-size: 1.7rem;
   height: 30px;
 }
 
@@ -46,6 +47,7 @@
   line-height: 0.8;
   width: 150px;
   padding-block: 1px;
+  margin-left: 20px;
   border-radius: 10px;
 }
 
@@ -72,8 +74,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 25px;
-  gap: 20px;
+  margin-left: 35px;
+  gap: 10px;
   height: 60px;
 }
 
@@ -110,4 +112,13 @@
 
 .feels span {
   font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+  .datetime-temp-container {
+    gap: 180px;
+  }
+
+  .feels {
+    margin-right: 35px;
+  }
 }

@@ -10,7 +10,8 @@
   justify-content: start;
   align-items: center;
   margin-left: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: -30px;
 }
 
 .forecast-btns button {
@@ -21,7 +22,6 @@
   background-color: wheat;
   border-radius: 5px;
   cursor: pointer;
-  margin-block: 20px;
 }
 
 .hidden {
@@ -42,8 +42,7 @@
   grid-template-rows: auto;
   grid-template-areas:
     "charts overday"
-    "charts overday"
-   
+    "charts overday";
 }
 
 .secondary-charts {

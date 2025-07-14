@@ -1,7 +1,7 @@
 import "./ChartsPage.css";
 import SideBar from "../SideBar/SideBar";
 import ForecastDashboard from "../Forecasting/ForcastDashboard";
-import NavBar from "../Navigation/NavBar";
+
 import { useCurrentWeather, useForcastData } from "../../Store.tsx";
 import { useEffect, useState } from "react";
 import { FetchForecasted } from "../../Services/FetchData";
@@ -45,9 +45,6 @@ const ChartsPage = () => {
 
   return (
     <div className="charts-dashboard">
-      <section className="navbar">
-        <NavBar />
-      </section>
       <section className="sidebar">
         <SideBar />
       </section>

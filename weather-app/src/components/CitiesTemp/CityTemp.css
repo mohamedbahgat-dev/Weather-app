@@ -21,3 +21,17 @@
 .city-name {
   font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+  .city-temp {
+    width: 120px;
+    font-size: 10px;
+  }
+  .city-temp-c {
+    font-size: 1.2rem;
+  }
+
+  .city-temp img {
+    width: 40px;
+  }
+}

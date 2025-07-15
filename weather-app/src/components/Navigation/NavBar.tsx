@@ -17,7 +17,7 @@ const NavBar = () => {
       <nav className="nav">
         <Location />
         <form className="search-form" action={search}>
-          <input type="text" placeholder="search for a city..." name="query" />
+          <input type="text" placeholder="city/country" name="query" />
           <button className="search-btn" type="submit">
             <IoSearchOutline size="15px" />
           </button>

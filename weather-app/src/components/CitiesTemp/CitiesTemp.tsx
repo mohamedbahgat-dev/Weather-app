@@ -20,9 +20,7 @@ const CitiesTemp = () => {
     <div className="cities-container">
       {cities.map((city, index) => (
         <div key={index}>
-          <div>
-            <CityTemp city={city} />
-          </div>
+          <CityTemp city={city} />
         </div>
       ))}
     </div>

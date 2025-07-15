@@ -115,7 +115,11 @@
 }
 @media only screen and (max-width: 600px) {
   .datetime-temp-container {
-    gap: 180px;
+    gap: 150px;
+  }
+
+  .hourly-temp {
+    justify-content: center;
   }
 
   .feels {

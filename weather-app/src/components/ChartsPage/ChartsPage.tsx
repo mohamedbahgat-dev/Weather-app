@@ -45,7 +45,7 @@ const ChartsPage = () => {
 
   return (
     <div className="charts-dashboard">
-      <section className="sidebar">
+      <section className="cherts-sidebar">
         <SideBar />
       </section>
       <section className="forecasted-dash">

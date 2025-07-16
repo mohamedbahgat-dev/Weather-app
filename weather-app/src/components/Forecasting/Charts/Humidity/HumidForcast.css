@@ -10,9 +10,8 @@
 .humid-line-chart {
   display: flex;
   justify-content: center;
-
   border-radius: 20px;
-  width: 275px;
+  width: 200px;
   height: 100px;
   padding: 10px;
 }

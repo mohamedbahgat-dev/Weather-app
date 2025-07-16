@@ -44,3 +44,23 @@
   height: 50px;
   border-radius: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+  .sidebar-container {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+  }
+
+  .dashboard-nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .on-off {
+    margin-right: 20px;
+  }
+}

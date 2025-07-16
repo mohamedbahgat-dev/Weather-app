@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
- 
 }
 
 .overday-card {
@@ -51,4 +50,11 @@
   width: 22px;
   align-self: flex-end;
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .overday-card {
+    width: 110px;
+    height: 90px;
+  }
 }

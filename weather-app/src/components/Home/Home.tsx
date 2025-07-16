@@ -22,12 +22,13 @@ const Home = () => {
 
   return (
     <div className="container">
-      <section className="navbar">
-        <NavBar />
-      </section>
       <section className="sidebar">
         <SideBar />
       </section>
+      <section className="navbar">
+        <NavBar />
+      </section>
+
       <section className="main">
         <MainDashboard />
         <MetaDashboard />

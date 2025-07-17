@@ -18,7 +18,7 @@
     " sidebar map map";
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
   .map {
     height: 55vh;
     width: 60vh;
@@ -32,5 +32,22 @@
     grid-template-areas:
       "sidebar "
       "map";
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .map-dashboard {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10% 90%;
+    grid-template-areas:
+      "sidebar "
+      "map";
+  }
+
+  .map {
+    height: 55vh;
+    width: 116.5vh;
+    margin-top: 35px;
   }
 }

@@ -6,6 +6,10 @@
   grid-area: main;
 }
 
+.meta {
+  grid-area: meta;
+}
+
 .sidebar {
   grid-area: sidebar;
 }
@@ -47,12 +51,27 @@
     " sidebar main other-cities";
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
   .container {
     display: flex;
     flex-direction: column;
   }
   .polydata {
     margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 5% 5% 21.5% 27% 25% 22.5%;
+    grid-template-areas:
+      " sidebar"
+      "navbar "
+      "  main"
+      "  meta"
+      " polydata"
+      " other-cities";
   }
 }

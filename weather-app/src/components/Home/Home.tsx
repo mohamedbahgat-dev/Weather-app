@@ -31,6 +31,8 @@ const Home = () => {
 
       <section className="main">
         <MainDashboard />
+      </section>
+      <section className="meta">
         <MetaDashboard />
       </section>
       <section

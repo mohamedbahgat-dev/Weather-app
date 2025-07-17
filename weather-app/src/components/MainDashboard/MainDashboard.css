@@ -113,7 +113,7 @@
 .feels span {
   font-weight: bold;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
   .datetime-temp-container {
     gap: 150px;
   }
@@ -124,5 +124,18 @@
 
   .feels {
     margin-right: 35px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .datetime-temp-container {
+    gap: 250px;
+  }
+
+  .feels {
+    margin-left: 50px;
+  }
+  .temp {
+    font-size: 2.2rem;
   }
 }

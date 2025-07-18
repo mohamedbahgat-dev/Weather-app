@@ -75,3 +75,20 @@
       " other-cities";
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .container {
+    display: grid;
+    grid-template-columns: 10% 45% 45%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "sidebar navbar navbar"
+      "sidebar main polydata "
+      "sidebar meta other-cities";
+  }
+
+  .other-cities {
+    margin-top: 10px;
+    height: 35.5vh;
+  }
+}

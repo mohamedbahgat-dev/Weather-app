@@ -13,7 +13,7 @@ const PolyData = () => {
     <div className="polydata-container">
       <section className="polydata-dashboard">
         <section className="poly-item rain-chance">
-          <p>Chance of rain</p>
+          <p>Rain %</p>
           <p className="rain-percentage">{currentWeather.precip_mm}</p>
           <BsCloudRain color="white" size={25} className="poly-icons" />
         </section>
@@ -23,12 +23,12 @@ const PolyData = () => {
           <GiRadiations color="white" size={25} className="poly-icons" />
         </section>
         <section className="poly-item cloud">
-          <p>Cloud coverage</p>
+          <p>Cloud %</p>
           <p>{currentWeather.cloud}%</p>
           <FaCloud color="white" size={25} className="poly-icons" />
         </section>
         <section className="poly-item wind-degree">
-          <p>Wind degree</p>
+          <p>Wind deg</p>
           <p>{currentWeather.wind_degree}</p>
           <LuWindArrowDown color="white" size={25} className="poly-icons" />
         </section>

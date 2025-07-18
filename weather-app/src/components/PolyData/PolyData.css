@@ -20,14 +20,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   flex-wrap: wrap;
 }
 
 .polydata-container {
   display: grid;
-
   justify-items: center;
   grid-template-columns: 60% 40%;
   grid-template-rows: auto;
@@ -79,5 +78,26 @@
 
   .poly-item p:first-child {
     font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .poly-item {
+    width: 13vh;
+    height: 15vh;
+  }
+  .sunmoon-container {
+    width: 20vh;
+    height: 40vh;
+  }
+
+  .polydata-dashboard {
+    height: fit-content;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .poly-item p:nth-child(2) {
+    margin-top: 0px;
   }
 }

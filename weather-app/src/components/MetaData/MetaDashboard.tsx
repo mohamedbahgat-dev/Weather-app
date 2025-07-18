@@ -42,7 +42,7 @@ const MetaDashboard = () => {
 
           <div className="items-container">
             <div className="item-name">
-              <p>Wind Speed</p>
+              <p>WND (v)</p>
               <WiStrongWind size={30} color={"#3674B5"} />
             </div>
             <span>{metaData.wind_mph} </span>mPh
@@ -74,7 +74,7 @@ const MetaDashboard = () => {
 
           <div className="items-container">
             <div className="item-name">
-              <p>Wind Direction</p>
+              <p>Wind dir</p>
               <WiWindDeg size={20} />
             </div>
             <span>{metaData.wind_dir} </span>

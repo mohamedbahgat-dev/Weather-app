@@ -6,14 +6,7 @@ const CitiesTemp = () => {
   const [cities, setCities] = useState<string[]>([]);
 
   useEffect(() => {
-    setCities([
-      "london",
-      "new york",
-      "bejing",
-      "cairo",
-      "rio de janiro",
-      "dubai",
-    ]);
+    setCities(["london", "NY", "bejing", "cairo", "RIO", "dubai"]);
   }, []);
 
   return (

@@ -50,3 +50,17 @@
 .item-name p {
   margin-right: 10px;
 }
+
+@media only screen and (min-width: 992px) {
+  .meta-dashboard {
+    width: 100%;
+    margin-block: 0px;
+    margin-top: -20px;
+    margin-inline: 0px;
+    margin-bottom: 10px;
+  }
+
+  .items-container {
+    height: 16vh;
+  }
+}

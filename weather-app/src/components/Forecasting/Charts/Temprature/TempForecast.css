@@ -35,3 +35,9 @@
   border-radius: 50px;
   background-color: rgb(255, 191, 142);
 }
+
+@media only screen and (min-width: 992px) {
+  .line-chart {
+    height: 170px;
+  }
+}

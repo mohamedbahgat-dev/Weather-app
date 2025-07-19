@@ -51,3 +51,12 @@
     margin-top: 35px;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .map-dashboard {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: auto;
+    grid-template-areas: "sidebar map ";
+  }
+}

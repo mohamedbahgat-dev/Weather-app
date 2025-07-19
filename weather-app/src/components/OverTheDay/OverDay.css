@@ -16,7 +16,7 @@
   width: 140px;
   height: 90px;
   border-radius: 10px;
-  gap: 10px;
+  gap: 5px;
 }
 
 .overday-hour {
@@ -56,5 +56,12 @@
   .overday-card {
     width: 110px;
     height: 90px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .overday-card {
+    width: 120px;
+    height: 79px;
   }
 }

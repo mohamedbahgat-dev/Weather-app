@@ -6,6 +6,7 @@ import clearSky from "../../../public/sky.jpg";
 import cloudySky from "../../../public/sky2.jpg";
 import Loader from "../Loader/Loader.tsx";
 import { FetchForecasted } from "../../Services/FetchData";
+import { Mood } from "../../Store";
 
 const MainDashboard: React.FC = () => {
   const { currentWeather, searchQuery, setCurrentWeather, setLocation } =
@@ -13,6 +14,8 @@ const MainDashboard: React.FC = () => {
   const { forcastedData, setForcastedData } = useForcastData();
 
   const [datetime, setDatetime] = useState<Date>(new Date());
+
+  const { isDark } = Mood();
 
   const daysOfWeek = [
     "Sunday",
@@ -49,6 +52,8 @@ const MainDashboard: React.FC = () => {
       return clearSky;
     } else if (currentWeather.temp_c < 20) {
       return cloudySky;
+    } else if (isDark) {
+      return null;
     }
   };
 
@@ -108,7 +113,16 @@ const MainDashboard: React.FC = () => {
   return (
     <section
       className="dashboard"
-      style={{ backgroundImage: `url(${backGround()})` }}
+      // style={{ backgroundImage: `url(${backGround()})` }}
+      style={
+        isDark
+          ? {
+              backgroundColor: "#1a3160ff",
+              color: "white",
+              boxShadow: "3px 3px 5px #31353ab4",
+            }
+          : { backgroundColor: "#8CCDEB" }
+      }
     >
       <div className="header">
         {error ? (

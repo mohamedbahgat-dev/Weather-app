@@ -1,5 +1,5 @@
 import "./SideBar.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PiMapPinAreaFill } from "react-icons/pi";
 import { RiDashboardFill } from "react-icons/ri";
 import { FaChartPie } from "react-icons/fa";
@@ -7,16 +7,28 @@ import { IoMdNotifications } from "react-icons/io";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { Mood } from "../../Store";
 
 const SideBar = () => {
   const [bgColor, setBgColor] = useState<string>("white");
   const [bgName, setBgName] = useState<string>("Light");
 
+  const { isDark, dark, light } = Mood();
+
+  useEffect(() => {
+    console.log(isDark);
+  }, [isDark]);
+
   const changeBgColor = () => {
-    const newColor = bgColor === "white" ? "#0E2148" : "white";
+    const newColor = bgColor === "white" ? "#040b1aff" : "white";
     const newName = bgName === "Light" ? "Dark" : "Light";
     setBgColor(newColor);
     setBgName(newName);
+    if (isDark) {
+      light();
+    } else if (!isDark) {
+      dark();
+    }
     document.body.style.backgroundColor = newColor;
   };
 
@@ -50,8 +62,6 @@ const SideBar = () => {
         >
           <PiMapPinAreaFill size={30} color={"white"} />
         </NavLink>
-
-     
       </nav>
       <div className="notification-icon">
         <IoMdNotifications color="#332D56" size="1.5rem" />

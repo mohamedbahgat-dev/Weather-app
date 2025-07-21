@@ -92,3 +92,9 @@ export const useForcastData = create<any>((set) => ({
   forcastedData: [],
   setForcastedData: (forcastedData: any) => set({ forcastedData }),
 }));
+
+export const Mood = create<any>((set) => ({
+  isDark: false,
+  dark: () => set({ isDark: true }),
+  light: () => set({ isDark: false }),
+}));

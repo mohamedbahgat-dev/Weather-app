@@ -3,10 +3,10 @@ import "./MainDashboard.css";
 import { FetchCurrentWeather } from "../../Services/FetchData.tsx";
 import { useCurrentWeather, useForcastData } from "../../Store.tsx";
 import clearSky from "../../../public/sky.jpg";
-import cloudySky from "../../../public/sky2.jpg";
+import nightSky from "../../../public/nightsky.jpg";
+import { Mood } from "../../Store";
 import Loader from "../Loader/Loader.tsx";
 import { FetchForecasted } from "../../Services/FetchData";
-import { Mood } from "../../Store";
 
 const MainDashboard: React.FC = () => {
   const { currentWeather, searchQuery, setCurrentWeather, setLocation } =
@@ -46,16 +46,6 @@ const MainDashboard: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const term = searchQuery ? searchQuery : "paris";
-
-  const backGround = () => {
-    if (currentWeather.temp_c > 20) {
-      return clearSky;
-    } else if (currentWeather.temp_c < 20) {
-      return cloudySky;
-    } else if (isDark) {
-      return null;
-    }
-  };
 
   useEffect(() => {
     const getCurrentWeather = async () => {
@@ -113,15 +103,14 @@ const MainDashboard: React.FC = () => {
   return (
     <section
       className="dashboard"
-      // style={{ backgroundImage: `url(${backGround()})` }}
       style={
         isDark
           ? {
-              backgroundColor: "#1a3160ff",
+              backgroundImage: `url(${nightSky})`,
               color: "white",
               boxShadow: "3px 3px 5px #31353ab4",
             }
-          : { backgroundColor: "#8CCDEB" }
+          : { backgroundImage: `url(${clearSky})` }
       }
     >
       <div className="header">

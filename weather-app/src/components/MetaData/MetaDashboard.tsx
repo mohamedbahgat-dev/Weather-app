@@ -7,30 +7,32 @@ import { WiHumidity } from "react-icons/wi";
 import { MdOutlineVisibility } from "react-icons/md";
 import { LuCircleGauge } from "react-icons/lu";
 import clearSky from "../../../public/sky.jpg";
-import cloudySky from "../../../public/sky2.jpg";
+import nightSky from "../../../public/nightsky.jpg";
+import { Mood } from "../../Store";
 
 const MetaDashboard = () => {
   const { currentWeather } = useCurrentWeather();
   const [metaData, setMetaData] = useState(currentWeather);
+  const { isDark } = Mood();
 
   useEffect(() => {
     setMetaData(currentWeather);
   }, [currentWeather]);
-
-  const backGround = () => {
-    if (currentWeather.temp_c > 20) {
-      return clearSky;
-    } else if (currentWeather.temp_c < 20) {
-      return cloudySky;
-    }
-  };
 
   return (
     <section>
       {metaData.length !== 0 ? (
         <div
           className="meta-dashboard"
-          style={{ backgroundImage: `url(${backGround()})` }}
+          style={
+            isDark
+              ? {
+                  backgroundImage: `url(${nightSky})`,
+                  color: "white",
+                  boxShadow: "3px 3px 5px #31353ab4",
+                }
+              : { backgroundImage: `url(${clearSky})` }
+          }
         >
           <div className="items-container">
             <div className="item-name">

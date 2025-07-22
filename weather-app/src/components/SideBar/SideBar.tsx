@@ -1,5 +1,5 @@
 import "./SideBar.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PiMapPinAreaFill } from "react-icons/pi";
 import { RiDashboardFill } from "react-icons/ri";
 import { FaChartPie } from "react-icons/fa";
@@ -15,12 +15,8 @@ const SideBar = () => {
 
   const { isDark, dark, light } = Mood();
 
-  useEffect(() => {
-    console.log(isDark);
-  }, [isDark]);
-
   const changeBgColor = () => {
-    const newColor = bgColor === "white" ? "#040b1aff" : "white";
+    const newColor = bgColor === "white" ? "#0b193fff" : "white";
     const newName = bgName === "Light" ? "Dark" : "Light";
     setBgColor(newColor);
     setBgName(newName);
@@ -33,7 +29,14 @@ const SideBar = () => {
   };
 
   return (
-    <section className="sidebar-container">
+    <section
+      className="sidebar-container"
+      style={
+        !isDark
+          ? { backgroundColor: "#cfd0d0" }
+          : { backgroundColor: "#32373eff" }
+      }
+    >
       <img className="logo-img" src="../public/logo.png" alt="SkyNow logo" />
       <nav className="dashboard-nav">
         <NavLink

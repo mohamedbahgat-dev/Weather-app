@@ -2,9 +2,11 @@ import "./NavBar.css";
 import { IoSearchOutline } from "react-icons/io5";
 import { useCurrentWeather } from "../../Store";
 import Location from "../Location/Location";
+import { Mood } from "../../Store";
 
 const NavBar = () => {
   const { setSearchQuery } = useCurrentWeather();
+  const { isDark } = Mood();
 
   const search = (formData: any) => {
     const words = formData.get("query").trim();
@@ -16,7 +18,15 @@ const NavBar = () => {
     <div>
       <nav className="nav">
         <Location />
-        <form className="search-form" action={search}>
+        <form
+          style={
+            isDark
+              ? { backgroundColor: "white" }
+              : { backgroundColor: "#e6e6e69b" }
+          }
+          className="search-form"
+          action={search}
+        >
           <input type="text" placeholder="city/country" name="query" />
           <button className="search-btn" type="submit">
             <IoSearchOutline size="15px" />

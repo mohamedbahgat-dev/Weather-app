@@ -5,20 +5,12 @@ import "./Home.css";
 import PolyData from "../PolyData/PolyData";
 import NavBar from "../Navigation/NavBar";
 import CitiesTemp from "../CitiesTemp/CitiesTemp";
+import nightSky from "../../../public/nightsky.jpg";
+import { Mood } from "../../Store";
 import clearSky from "../../../public/sky.jpg";
-import cloudySky from "../../../public/sky2.jpg";
-import { useCurrentWeather } from "../../Store";
 
 const Home = () => {
-  const { currentWeather } = useCurrentWeather();
-
-  const backGround = () => {
-    if (currentWeather.temp_c > 20) {
-      return clearSky;
-    } else if (currentWeather.temp_c < 20) {
-      return cloudySky;
-    }
-  };
+  const { isDark } = Mood();
 
   return (
     <div className="container">
@@ -37,13 +29,29 @@ const Home = () => {
       </section>
       <section
         className="polydata"
-        style={{ backgroundImage: `url(${backGround()})` }}
+        style={
+          isDark
+            ? {
+                backgroundImage: `url(${nightSky})`,
+                color: "white",
+                boxShadow: "3px 3px 5px #31353ab4",
+              }
+            : { backgroundImage: `url(${clearSky})` }
+        }
       >
         <PolyData />
       </section>
       <section
         className="other-cities"
-        style={{ backgroundImage: `url(${backGround()})` }}
+        style={
+          isDark
+            ? {
+                backgroundImage: `url(${nightSky})`,
+                color: "white",
+                boxShadow: "3px 3px 5px #31353ab4",
+              }
+            : { backgroundImage: `url(${clearSky})` }
+        }
       >
         <CitiesTemp />
       </section>

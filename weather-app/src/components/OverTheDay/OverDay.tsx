@@ -1,4 +1,6 @@
 import "./OverDay.css";
+import { CiTempHigh } from "react-icons/ci";
+import { WiHumidity } from "react-icons/wi";
 
 const OverDay = (props: any) => {
   return (
@@ -8,8 +10,10 @@ const OverDay = (props: any) => {
           <span className="overday-hour">{index + 1}:00</span>
 
           <div className="overday-value">
+            <CiTempHigh />
             <span>{cast.temp_c}°</span>
             <span>{cast.humidity}%</span>
+            <WiHumidity />
           </div>
 
           <img src={cast.condition.icon} alt={cast.condition.text} />

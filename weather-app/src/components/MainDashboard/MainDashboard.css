@@ -95,13 +95,12 @@
   text-align: center;
   border-radius: 10px;
   height: 120px;
-  background: #2a7b9b;
+  background: #fff9cf;
   background: linear-gradient(
-    194deg,
-    rgba(246, 243, 209, 0.726) 0%,
-    rgb(235, 226, 147) 100%
+    280deg,
+    rgba(235, 225, 146, 0.238) 0%,
+    rgba(246, 242, 207, 0.879) 100%
   );
-
   filter: drop-shadow(3px 5px 5px rgba(131, 131, 131, 0.702));
 }
 

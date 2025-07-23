@@ -29,7 +29,8 @@
 
 .overday-value {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   gap: 10px;
   font-size: 15px;
 }
@@ -54,7 +55,7 @@
 
 @media only screen and (max-width: 480px) {
   .overday-card {
-    width: 110px;
+    width: 140px;
     height: 90px;
   }
 }
@@ -63,5 +64,16 @@
   .overday-card {
     width: 120px;
     height: 79px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .overday-card {
+    width: 140px;
+    height: 90px;
+  }
+
+  .overday-container {
+    margin-top: 50px;
   }
 }

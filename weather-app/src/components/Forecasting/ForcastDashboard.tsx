@@ -10,9 +10,8 @@ import { useForcastData } from "../../Store.tsx";
 import OverDay from "../OverTheDay/OverDay.tsx";
 
 const ForecastDashboard = () => {
+  const { forcastedData } = useForcastData();
 
-  const {forcastedData} = useForcastData()
- 
   const [activeToday, setActiveToday] = useState<boolean>(true);
   const [activeTomorrow, setActiveTomorrow] = useState<boolean>(false);
   const [activeFiveDays, setActiveFiveDays] = useState<boolean>(false);
@@ -86,7 +85,7 @@ const ForecastDashboard = () => {
         <div>
           {forcastedData ? (
             <div className="forecast-board">
-              <div className="show"  ref={todayRef}>
+              <div className="show" ref={todayRef}>
                 <div className="charts-board">
                   <TempForecast data={forcastedData[0]} />
                   <div className="secondary-charts">
@@ -99,7 +98,7 @@ const ForecastDashboard = () => {
                 </div>
               </div>
 
-              <div className="hidden"  ref={tomorrowRef}>
+              <div className="hidden" ref={tomorrowRef}>
                 <div className="charts-board">
                   <TempForecast data={forcastedData[1]} />
                   <div className="secondary-charts">

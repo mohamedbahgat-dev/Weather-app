@@ -67,7 +67,7 @@ const SideBar = () => {
         </NavLink>
       </nav>
       <div className="notification-icon">
-        <IoMdNotifications color="#332D56" size="1.5rem" />
+        <IoMdNotifications color="#fefefeff" size="1.5rem" />
       </div>
       <div>
         <button className="on-off" onClick={changeBgColor}>

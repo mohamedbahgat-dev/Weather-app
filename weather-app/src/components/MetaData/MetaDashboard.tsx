@@ -2,7 +2,7 @@ import "./MetaDashboard.css";
 import { useCurrentWeather } from "../../Store";
 import { useEffect, useState } from "react";
 import { PiPlant } from "react-icons/pi";
-import { WiWindDeg, WiStrongWind } from "weather-icons-react";
+
 import { WiHumidity } from "react-icons/wi";
 import { MdOutlineVisibility } from "react-icons/md";
 import { LuCircleGauge } from "react-icons/lu";
@@ -45,7 +45,6 @@ const MetaDashboard = () => {
           <div className="items-container">
             <div className="item-name">
               <p>WND (v)</p>
-              <WiStrongWind size={30} color={"#3674B5"} />
             </div>
             <span>{metaData.wind_mph} </span>mPh
           </div>
@@ -77,7 +76,6 @@ const MetaDashboard = () => {
           <div className="items-container">
             <div className="item-name">
               <p>Wind dir</p>
-              <WiWindDeg size={20} />
             </div>
             <span>{metaData.wind_dir} </span>
           </div>

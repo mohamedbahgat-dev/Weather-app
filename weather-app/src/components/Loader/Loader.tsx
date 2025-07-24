@@ -2,7 +2,7 @@ import { SyncLoader } from "react-spinners";
 
 const Loader = () => {
   return (
-    <div>
+    <div style={{ marginTop: "120px" }}>
       <SyncLoader />
     </div>
   );

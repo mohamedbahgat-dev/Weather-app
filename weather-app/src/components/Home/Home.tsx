@@ -8,53 +8,62 @@ import CitiesTemp from "../CitiesTemp/CitiesTemp";
 import nightSky from "../../../public/nightsky.jpg";
 import { Mood } from "../../Store";
 import clearSky from "../../../public/sky.jpg";
+import { useCurrentWeather } from "../../Store";
+import Loader from "../Loader/Loader";
 
 const Home = () => {
   const { isDark } = Mood();
+  const { currentWeather } = useCurrentWeather();
 
   return (
-    <div className="container">
-      <section className="sidebar">
-        <SideBar />
-      </section>
-      <section className="navbar">
-        <NavBar />
-      </section>
+    <div className="outer-container">
+      {currentWeather ? (
+        <div className="container">
+          <section className="sidebar">
+            <SideBar />
+          </section>
+          <section className="navbar">
+            <NavBar />
+          </section>
 
-      <section className="main">
-        <MainDashboard />
-      </section>
-      <section className="meta">
-        <MetaDashboard />
-      </section>
-      <section
-        className="polydata"
-        style={
-          isDark
-            ? {
-                backgroundImage: `url(${nightSky})`,
-                color: "white",
-                boxShadow: "3px 3px 5px #31353ab4",
-              }
-            : { backgroundImage: `url(${clearSky})` }
-        }
-      >
-        <PolyData />
-      </section>
-      <section
-        className="other-cities"
-        style={
-          isDark
-            ? {
-                backgroundImage: `url(${nightSky})`,
-                color: "white",
-                boxShadow: "3px 3px 5px #31353ab4",
-              }
-            : { backgroundImage: `url(${clearSky})` }
-        }
-      >
-        <CitiesTemp />
-      </section>
+          <section className="main">
+            <MainDashboard />
+          </section>
+          <section className="meta">
+            <MetaDashboard />
+          </section>
+          <section
+            className="polydata"
+            style={
+              isDark
+                ? {
+                    backgroundImage: `url(${nightSky})`,
+                    color: "white",
+                    boxShadow: "3px 3px 5px #31353ab4",
+                  }
+                : { backgroundImage: `url(${clearSky})` }
+            }
+          >
+            <PolyData />
+          </section>
+          <section
+            className="other-cities"
+            style={
+              isDark
+                ? {
+                    backgroundImage: `url(${nightSky})`,
+                    color: "white",
+                    boxShadow: "3px 3px 5px #31353ab4",
+                  }
+                : { backgroundImage: `url(${clearSky})` }
+            }
+          >
+            <CitiesTemp />
+          </section>
+        </div>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

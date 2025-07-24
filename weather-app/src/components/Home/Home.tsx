@@ -5,9 +5,9 @@ import "./Home.css";
 import PolyData from "../PolyData/PolyData";
 import NavBar from "../Navigation/NavBar";
 import CitiesTemp from "../CitiesTemp/CitiesTemp";
-import nightSky from "../../../public/nightsky.jpg";
+import nightSky from "../../assets/nightsky.jpg";
 import { Mood } from "../../Store";
-import clearSky from "../../../public/sky.jpg";
+import clearSky from "../../assets/sky.jpg";
 import { useCurrentWeather } from "../../Store";
 import Loader from "../Loader/Loader";
 

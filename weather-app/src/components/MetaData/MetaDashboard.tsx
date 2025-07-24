@@ -6,8 +6,8 @@ import { PiPlant } from "react-icons/pi";
 import { WiHumidity } from "react-icons/wi";
 import { MdOutlineVisibility } from "react-icons/md";
 import { LuCircleGauge } from "react-icons/lu";
-import clearSky from "../../../public/sky.jpg";
-import nightSky from "../../../public/nightsky.jpg";
+import clearSky from "../../assets/sky.jpg";
+import nightSky from "../../assets/nightsky.jpg";
 import { Mood } from "../../Store";
 
 const MetaDashboard = () => {

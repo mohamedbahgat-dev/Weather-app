@@ -147,24 +147,27 @@ const MainDashboard: React.FC = () => {
                   </section>
 
                   {/* current temp */}
-
-                  <section className="current-temp-container">
-                    <div className="temp-card">
-                      <img
-                        src={currentWeather?.condition.icon}
-                        alt="codition icon"
-                      />
-                      <h2 className="temp">{currentWeather?.temp_c}°C</h2>
-                    </div>
-                    <div className="minmax-temp">
-                      <p>
-                        Min: <span>{forcastedData[0]?.day.mintemp_c}°</span>
-                      </p>
-                      <p>
-                        Max: <span>{forcastedData[0]?.day.maxtemp_c}°</span>
-                      </p>
-                    </div>
-                  </section>
+                  {currentWeather ? (
+                    <section className="current-temp-container">
+                      <div className="temp-card">
+                        <img
+                          src={currentWeather?.condition.icon}
+                          alt="codition icon"
+                        />
+                        <h2 className="temp">{currentWeather?.temp_c}°C</h2>
+                      </div>
+                      <div className="minmax-temp">
+                        <p>
+                          Min: <span>{forcastedData[0]?.day.mintemp_c}°</span>
+                        </p>
+                        <p>
+                          Max: <span>{forcastedData[0]?.day.maxtemp_c}°</span>
+                        </p>
+                      </div>
+                    </section>
+                  ) : (
+                    <div>...Loading</div>
+                  )}
                 </section>
 
                 <section className="hourly-temp">

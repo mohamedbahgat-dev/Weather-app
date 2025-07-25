@@ -39,7 +39,7 @@ const SideBar = () => {
     >
       <img
         className="logo-img"
-        src="../../../public/logo.png"
+        src="../src/assets/logo.png"
         alt="SkyNow logo"
       />
       <nav className="dashboard-nav">

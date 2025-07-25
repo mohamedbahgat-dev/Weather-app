@@ -7,7 +7,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import { Mood } from "../../Store";
+import { Mood } from "../../store";
 
 const SideBar = () => {
   const [bgColor, setBgColor] = useState<string>("white");

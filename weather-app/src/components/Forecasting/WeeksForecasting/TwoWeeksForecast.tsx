@@ -1,5 +1,5 @@
 import "./TwoWeeksForecast.css";
-import { useForcastData } from "../../../Store";
+import { useForcastData } from "../../../store";
 import { useEffect, useState } from "react";
 import ForecastCard from "../ForecastCard";
 

@@ -1,5 +1,5 @@
 import "./GoogleMap.css";
-import { useCurrentWeather } from "../../Store";
+import { useCurrentWeather } from "../../store";
 import {
   APIProvider,
   Map,

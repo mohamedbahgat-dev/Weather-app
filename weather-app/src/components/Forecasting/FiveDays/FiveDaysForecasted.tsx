@@ -1,6 +1,6 @@
 import "./FiveDaysForcasted.css";
 import ForecastCard from "../ForecastCard";
-import { useForcastData } from "../../../Store";
+import { useForcastData } from "../../../store";
 
 const FiveDaysForecasted = () => {
   const { forcastedData } = useForcastData();

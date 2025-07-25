@@ -1,6 +1,6 @@
 import "./MinMaxTemp.css";
 
-import { useForcastData } from "../../../../Store";
+import { useForcastData } from "../../../../store";
 import { Line } from "react-chartjs-2";
 import {
   Chart as chartjs,

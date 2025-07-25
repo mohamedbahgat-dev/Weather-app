@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./MainDashboard.css";
 import { FetchCurrentWeather } from "../../Services/FetchData.tsx";
-import { useCurrentWeather, useForcastData } from "../../Store.tsx";
+import { useCurrentWeather, useForcastData } from "../../store.tsx";
 import clearSky from "../../assets/sky.jpg";
 import nightSky from "../../assets/nightsky.jpg";
-import { Mood } from "../../Store";
+import { Mood } from "../../store.tsx";
 import Loader from "../Loader/Loader.tsx";
 import { FetchForecasted } from "../../Services/FetchData";
 

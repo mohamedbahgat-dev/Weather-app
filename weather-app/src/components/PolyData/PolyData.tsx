@@ -1,5 +1,5 @@
 import "./PolyData.css";
-import { useCurrentWeather } from "../../Store";
+import { useCurrentWeather } from "../../store";
 import { FaCloud } from "react-icons/fa";
 import { BsCloudRain } from "react-icons/bs";
 import { LuWindArrowDown } from "react-icons/lu";

@@ -1,6 +1,6 @@
 import "./Location.css";
 import { MdLocationPin } from "react-icons/md";
-import { useCurrentWeather } from "../../Store";
+import { useCurrentWeather } from "../../store";
 
 const Location = () => {
   const { location } = useCurrentWeather();

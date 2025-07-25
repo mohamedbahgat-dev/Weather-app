@@ -2,7 +2,7 @@ import "./ChartsPage.css";
 import SideBar from "../SideBar/SideBar";
 import ForecastDashboard from "../Forecasting/ForcastDashboard";
 
-import { useCurrentWeather, useForcastData } from "../../Store.tsx";
+import { useCurrentWeather, useForcastData } from "../../store.tsx";
 import { useEffect, useState } from "react";
 import { FetchForecasted } from "../../Services/FetchData";
 

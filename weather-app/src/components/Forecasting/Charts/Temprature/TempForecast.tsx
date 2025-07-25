@@ -1,7 +1,7 @@
 import "./TempForecast.css";
 import { IoIosTrendingDown } from "react-icons/io";
 import { IoIosTrendingUp } from "react-icons/io";
-import { useForcastData, useCurrentWeather } from "../../../../Store";
+import { useForcastData, useCurrentWeather } from "../../../../store";
 import { Line } from "react-chartjs-2";
 import {
   Chart as chartjs,

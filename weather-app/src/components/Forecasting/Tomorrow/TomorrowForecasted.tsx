@@ -1,5 +1,5 @@
 import "./TomorrowForecated.css";
-import { useForcastData } from "../../../Store";
+import { useForcastData } from "../../../store";
 
 const TomorrowForecasted = () => {
   const { forcastedData } = useForcastData();

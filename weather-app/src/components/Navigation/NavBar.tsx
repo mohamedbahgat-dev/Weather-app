@@ -1,8 +1,8 @@
 import "./NavBar.css";
 import { IoSearchOutline } from "react-icons/io5";
-import { useCurrentWeather } from "../../Store";
+import { useCurrentWeather } from "../../store";
 import Location from "../Location/Location";
-import { Mood } from "../../Store";
+import { Mood } from "../../store";
 
 const NavBar = () => {
   const { setSearchQuery } = useCurrentWeather();

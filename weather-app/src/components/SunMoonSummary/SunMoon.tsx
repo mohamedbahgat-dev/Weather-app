@@ -1,6 +1,6 @@
 import "./SunMoon.css";
 import { FiSunset, FiSunrise } from "react-icons/fi";
-import { useAstrodata, useCurrentWeather } from "../../Store";
+import { useAstrodata, useCurrentWeather } from "../../store";
 import { useState, useEffect } from "react";
 import { FetchAstroData } from "../../Services/FetchData";
 

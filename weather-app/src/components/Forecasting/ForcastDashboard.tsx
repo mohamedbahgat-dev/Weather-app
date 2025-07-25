@@ -5,7 +5,7 @@ import PercepForcast from "./Charts/Percepitation/PercepForcast";
 import FiveDaysForecasted from "./FiveDays/FiveDaysForecasted";
 import HumidForcast from "./Charts/Humidity/HumidForcast";
 import MinMaxTemp from "./Charts/MinMaxTemprature/MinMaxTemp";
-import { useForcastData } from "../../store.tsx";
+import { useForcastData } from "../../store.ts";
 import OverDay from "../OverTheDay/OverDay.tsx";
 
 const ForecastDashboard = () => {

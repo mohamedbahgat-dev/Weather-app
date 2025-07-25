@@ -7,7 +7,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import { Mood } from "../../store.ts";
+import { Mood } from "../../store";
 
 const SideBar = () => {
   const [bgColor, setBgColor] = useState<string>("white");
@@ -37,7 +37,11 @@ const SideBar = () => {
           : { backgroundColor: "#32373eff" }
       }
     >
-      <img className="logo-img" src="../../assets/logo.png" alt="SkyNow logo" />
+      <img
+        className="logo-img"
+        src="../../../public/logo.png"
+        alt="SkyNow logo"
+      />
       <nav className="dashboard-nav">
         <NavLink
           to={"/"}

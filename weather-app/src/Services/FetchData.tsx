@@ -6,7 +6,7 @@ interface QueryType {
 
 export const FetchCurrentWeather = (query: QueryType) => {
   return fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${query}&aqi=yes`
+    `https://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${query}&aqi=yes`
   );
 };
 
@@ -21,12 +21,12 @@ const getDate = () => {
 
 export const FetchAstroData = (query: QueryType) => {
   return fetch(
-    `http://api.weatherapi.com/v1/astronomy.json?key=${APIKEY}&q=${query}&dt=${getDate()}`
+    `https://api.weatherapi.com/v1/astronomy.json?key=${APIKEY}&q=${query}&dt=${getDate()}`
   );
 };
 
 export const FetchForecasted = (query: QueryType) => {
   return fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${APIKEY}&q=${query}&days=14&aqi=no&alerts=no`
+    `https://api.weatherapi.com/v1/forecast.json?key=${APIKEY}&q=${query}&days=14&aqi=no&alerts=no`
   );
 };

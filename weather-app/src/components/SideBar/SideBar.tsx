@@ -37,11 +37,7 @@ const SideBar = () => {
           : { backgroundColor: "#32373eff" }
       }
     >
-      <img
-        className="logo-img"
-        src="../src/assets/logo.png"
-        alt="SkyNow logo"
-      />
+      <img className="logo-img" src="/public/logo.png" alt="SkyNow logo" />
       <nav className="dashboard-nav">
         <NavLink
           to={"/"}

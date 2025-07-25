@@ -6,9 +6,9 @@ import PolyData from "../PolyData/PolyData";
 import NavBar from "../Navigation/NavBar";
 import CitiesTemp from "../CitiesTemp/CitiesTemp";
 import nightSky from "../../assets/nightsky.jpg";
-import { Mood } from "../../store";
+import { Mood } from "../../store.ts";
 import clearSky from "../../assets/sky.jpg";
-import { useCurrentWeather } from "../../store";
+import { useCurrentWeather } from "../../store.ts";
 import Loader from "../Loader/Loader";
 
 const Home = () => {

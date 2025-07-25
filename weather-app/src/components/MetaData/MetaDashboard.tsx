@@ -1,14 +1,13 @@
 import "./MetaDashboard.css";
-import { useCurrentWeather } from "../../store";
+import { useCurrentWeather } from "../../store.ts";
 import { useEffect, useState } from "react";
 import { PiPlant } from "react-icons/pi";
-
 import { WiHumidity } from "react-icons/wi";
 import { MdOutlineVisibility } from "react-icons/md";
 import { LuCircleGauge } from "react-icons/lu";
 import clearSky from "../../assets/sky.jpg";
 import nightSky from "../../assets/nightsky.jpg";
-import { Mood } from "../../store";
+import { Mood } from "../../store.ts";
 
 const MetaDashboard = () => {
   const { currentWeather } = useCurrentWeather();
